@@ -356,7 +356,11 @@
         }
 
         .hero-overlay {
-            background: rgba(0, 0, 0, 0.75);
+            background: rgba(0, 0, 0, 0.55);
+        }
+
+        .roun {
+            border-radius: 20%;
         }
     </style>
 </head>
@@ -656,8 +660,16 @@
                 </div>
 
                 <!-- Navigation Areas -->
-                <div class="story-nav prev" onclick="changeStory(-1)"></div>
-                <div class="story-nav next" onclick="changeStory(1)"></div>
+                <div class="story-nav prev flex items-center justify-start p-2" onclick="changeStory(-1)">
+                    <div class="bg-black/20 roun p-0.5">
+                        <i class="material-icons text-white/30 hover:text-white/90 text-3xl md:text-4xl">chevron_left</i>
+                    </div>
+                </div>
+                <div class="story-nav next flex items-center justify-end p-2" onclick="changeStory(1)">
+                    <div class=" bg-black/20 roun p-0.5">
+                        <i class="material-icons text-white/30 hover:text-white/90 text-3xl md:text-4xl">chevron_right</i>
+                    </div>
+                </div>
 
                 <!-- Pause Button -->
                 <div class="hidden story-pause" onclick="togglePlayPause()">
@@ -670,30 +682,6 @@
                 </div>
             </div>
 
-            <!-- Story Thumbnails -->
-            <div class="story-thumbnails">
-                <div class="story-thumbnail active" onclick="goToStory(0)">
-                    <img src="https://sfile.chatglm.cn/images-ppt/821fdbad95a2.jpg" alt="Story 1">
-                </div>
-                <div class="story-thumbnail" onclick="goToStory(1)">
-                    <img src="https://sfile.chatglm.cn/images-ppt/502d81465240.jpg" alt="Story 2">
-                    <!-- <div class="video-indicator">
-                        <i class="material-icons text-xs">videocam</i>
-                    </div> -->
-                </div>
-                <div class="story-thumbnail" onclick="goToStory(2)">
-                    <img src="https://sfile.chatglm.cn/images-ppt/a45c560d7244.jpg" alt="Story 3">
-                </div>
-                <div class="story-thumbnail" onclick="goToStory(3)">
-                    <img src="https://sfile.chatglm.cn/images-ppt/502d81465240.jpg" alt="Story 4">
-                    <!-- <div class="video-indicator">
-                        <i class="material-icons text-xs">videocam</i>
-                    </div> -->
-                </div>
-                <div class="story-thumbnail" onclick="goToStory(4)">
-                    <img src="https://sfile.chatglm.cn/images-ppt/e03432169208.jpg" alt="Story 5">
-                </div>
-            </div>
         </div>
     </section>
 
@@ -902,7 +890,6 @@
         // Stories functionality
         let currentStory = 0;
         const stories = document.querySelectorAll('.story-item');
-        const thumbnails = document.querySelectorAll('.story-thumbnail');
         const progressBars = document.querySelectorAll('.story-progress-bar');
         let storyInterval;
         let isPaused = false;
@@ -961,7 +948,6 @@
 
             // Hide all stories
             stories.forEach(story => story.classList.remove('active'));
-            thumbnails.forEach(thumb => thumb.classList.remove('active'));
             progressBars.forEach(bar => bar.classList.remove('active'));
 
             // Reset all progress bars
@@ -972,7 +958,6 @@
 
             // Show selected story
             stories[index].classList.add('active');
-            thumbnails[index].classList.add('active');
 
             // Start progress bar animation
             setTimeout(() => {
