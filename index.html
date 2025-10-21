@@ -1,1128 +1,2318 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
-
+<html lang="pt-ST" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="Levamos a Felicidade até você com surpresas personalizadas, decoração romântica, picnics, jantares e muito mais. Momentos únicos, entregues com amor e emoção.">
-    <title>Levamos a Felicidade até você</title>
+    <meta name="description" content="Mimos STP - Especialistas em criar momentos inesquecíveis. Surpresas personalizadas, decorações românticas, picnics exclusivos e propostas de casamento em São Tomé e Príncipe.">
+    <meta name="keywords" content="surpresas personalizadas, decoração romântica, picnic, jantar romântico, proposta de casamento, São Tomé, Príncipe, eventos especiais">
+    <meta name="author" content="Mimos STP">
+    <meta property="og:title" content="Mimos STP - Especialistas em Momentos Inesquecíveis">
+    <meta property="og:description" content="Transformamos seus momentos especiais em memórias eternas com surpresas personalizadas e entregas emocionantes">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pt_ST">
+    <meta property="og:image" content="https://mimosstp.com/og-image.jpg">
+    <link rel="canonical" href="https://mimosstp.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💝</text></svg>">
+    <title>Mimos STP - Especialistas em Momentos Inesquecíveis | São Tomé e Príncipe</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;500;600;700;900&family=Inter:wght@200;300;400;500;600;700;800&display=swap');
         
-        .font-serif {
+        :root {
+            --primary: #E91E63;
+            --primary-light: #F8BBD0;
+            --primary-dark: #C2185B;
+            --secondary: #FFC107;
+            --secondary-light: #FFECB3;
+            --accent: #9C27B0;
+            --accent-light: #E1BEE7;
+            --dark: #1A1A1A;
+            --light: #FAFAFA;
+            --text: #212121;
+            --text-light: #757575;
+            --gray-50: #FAFAFA;
+            --gray-100: #F5F5F5;
+            --gray-200: #EEEEEE;
+            --gray-300: #E0E0E0;
+            --success: #4CAF50;
+            --warning: #FF9800;
+            --error: #F44336;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--light);
+            color: var(--text);
+            overflow-x: hidden; /* Remove scroll horizontal */
+            line-height: 1.6;
+        }
+        
+        .font-playfair {
             font-family: 'Playfair Display', serif;
         }
-
-        .font-sans {
-            font-family: 'Inter', sans-serif;
-        }
-
-        .whatsapp-green {
-            background-color: #25D366;
-        }
-
-        .whatsapp-green:hover {
-            background-color: #128C7E;
-        }
-
-        .gold-gradient {
-            background: linear-gradient(135deg, #F59E0B, #FEF3C7, #FDF2F8);
-        }
-
-        .card-shadow {
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-        }
-
-        .testimonial-card {
-            background: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(10px);
-        }
-
-        .service-card {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-        }
-
-        .carousel-item {
-            display: none;
-        }
-
-        .carousel-item.active {
-            display: block;
-        }
-
-        .text-shadow {
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
-        }
-
-        .grid-pattern {
-            background-image:
-                linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
-            background-size: 20px 20px;
-        }
-
-        .icon-circle {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            margin: 0 auto 1rem;
-        }
-
-        .icon-gold {
-            background-color: rgba(245, 158, 11, 0.15);
-        }
-
-        .icon-pink {
-            background-color: rgba(236, 72, 153, 0.15);
-        }
-
-        .icon-purple {
-            background-color: rgba(147, 51, 234, 0.15);
-        }
-
-        .icon-blue {
-            background-color: rgba(59, 130, 246, 0.15);
-        }
-
-        .icon-green {
-            background-color: rgba(16, 185, 129, 0.15);
-        }
-
-        .testimonial-avatar {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
-            background-color: #F59E0B;
-            color: white;
-            font-weight: 600;
-            margin-right: 1rem;
-        }
-
-        /* Estilos para Stories */
-        .stories-container {
+        
+        /* Container responsivo */
+        .container {
             width: 100%;
-            max-width: 400px;
+            max-width: 1200px;
             margin: 0 auto;
-            position: relative;
-            background: #000;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-            aspect-ratio: 9/16;
+            padding: 0 1rem;
         }
-
-        .story-item {
-            position: relative;
+        
+        @media (min-width: 640px) {
+            .container { padding: 0 1.5rem; }
+        }
+        
+        @media (min-width: 1024px) {
+            .container { padding: 0 2rem; }
+        }
+        
+        /* Typography responsiva */
+        h1 { 
+            font-size: clamp(2rem, 5vw, 3.5rem); 
+            line-height: 1.2;
+        }
+        h2 { 
+            font-size: clamp(1.5rem, 4vw, 2.5rem); 
+            line-height: 1.3;
+        }
+        h3 { 
+            font-size: clamp(1.25rem, 3vw, 1.75rem); 
+            line-height: 1.3;
+        }
+        h4 { 
+            font-size: clamp(1.125rem, 2.5vw, 1.5rem); 
+            line-height: 1.4;
+        }
+        
+        /* Colors */
+        .text-primary { color: var(--primary); }
+        .text-secondary { color: var(--secondary); }
+        .text-accent { color: var(--accent); }
+        .bg-primary { background-color: var(--primary); }
+        .bg-secondary { background-color: var(--secondary); }
+        .bg-accent { background-color: var(--accent); }
+        .border-primary { border-color: var(--primary); }
+        
+        /* Gradients */
+        .primary-gradient {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .primary-bg-gradient {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+        }
+        
+        .secondary-bg-gradient {
+            background: linear-gradient(135deg, var(--secondary) 0%, #FF9800 100%);
+        }
+        
+        /* Animations */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        @keyframes shimmer {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.05); opacity: 0.8; }
+        }
+        
+        @keyframes heartBeat {
+            0%, 100% { transform: scale(1); }
+            25% { transform: scale(1.1); }
+            45% { transform: scale(1); }
+            65% { transform: scale(1.1); }
+        }
+        
+        @keyframes slideInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes slideInLeft {
+            from { opacity: 0; transform: translateX(-50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        
+        @keyframes slideInRight {
+            from { opacity: 0; transform: translateX(50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .floating { animation: float 6s ease-in-out infinite; }
+        .shimmer { background: linear-gradient(90deg, transparent, rgba(233, 30, 99, 0.3), transparent); background-size: 200% 100%; animation: shimmer 3s infinite; }
+        .pulse { animation: pulse 2s ease-in-out infinite; }
+        .heart-beat { animation: heartBeat 1.5s ease-in-out infinite; }
+        .slide-in-up { animation: slideInUp 0.8s ease-out; }
+        .slide-in-left { animation: slideInLeft 0.8s ease-out; }
+        .slide-in-right { animation: slideInRight 0.8s ease-out; }
+        .fade-in { animation: fadeIn 0.8s ease-out; }
+        
+        /* Effects */
+        .glass-morphism {
+            background: rgba(255, 255, 255, 0.25);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .hover-lift {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .hover-lift:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(233, 30, 99, 0.2);
+        }
+        
+        /* Navigation responsiva */
+        .navbar {
+            position: fixed;
+            width: 100%;
+            z-index: 40;
+            transition: all 0.3s ease;
+        }
+        
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 80%;
+            max-width: 400px;
+            height: 100vh;
+            background: white;
+            box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+            transition: right 0.3s ease;
+            z-index: 50;
+            overflow-y: auto;
+        }
+        
+        .mobile-menu.active {
+            right: 0;
+        }
+        
+        .mobile-menu-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
             width: 100%;
             height: 100%;
-            display: none;
+            background: rgba(0,0,0,0.5);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 45;
         }
-
-        .story-item.active {
-            display: block;
+        
+        .mobile-menu-overlay.active {
+            opacity: 1;
+            visibility: visible;
         }
-
-        .story-progress {
+        
+        /* Service cards responsivos */
+        .service-card {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            border-radius: 16px;
+            width: 100%;
+            max-width: 100%;
+        }
+        
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(233, 30, 99, 0.1), transparent);
+            transition: left 0.6s;
+        }
+        
+        .service-card:hover::before {
+            left: 100%;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(233, 30, 99, 0.25);
+        }
+        
+        .service-card:hover .service-image {
+            transform: scale(1.05);
+        }
+        
+        .service-image {
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        /* Professional Elements */
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            white-space: nowrap;
+        }
+        
+        .badge-primary {
+            background-color: var(--primary-light);
+            color: var(--primary-dark);
+        }
+        
+        .badge-secondary {
+            background-color: var(--secondary-light);
+            color: #F57C00;
+        }
+        
+        .badge-accent {
+            background-color: var(--accent-light);
+            color: #7B1FA2;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 16px;
+            
+            transition: all 0.3s ease;
+            width: 100%;
+            padding: 1rem;
+        }
+        
+        .card:hover {
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        /* Form Elements responsivos */
+        .form-input {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 2px solid var(--gray-200);
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            background: white;
+            max-width: 100%;
+        }
+        
+        .form-input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(233, 30, 99, 0.1);
+        }
+        
+        .form-input.error {
+            border-color: var(--error);
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            font-size: 1rem;
+            white-space: nowrap;
+            min-width: fit-content;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(233, 30, 99, 0.3);
+        }
+        
+        .btn-secondary {
+            background-color: var(--secondary);
+            color: var(--text);
+        }
+        
+        .btn-secondary:hover {
+            background-color: #F57C00;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(255, 152, 0, 0.3);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--primary);
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        /* Loading States */
+        .loading {
+            position: relative;
+            pointer-events: none;
+            opacity: 0.7;
+        }
+        
+        .loading::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 20px;
+            height: 20px;
+            margin: -10px 0 0 -10px;
+            border: 2px solid transparent;
+            border-top-color: currentColor;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        /* Hero Video Background */
+        .hero-video {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
-            height: 3px;
-            background: rgba(255, 255, 255, 0.3);
-            z-index: 10;
-        }
-
-        .story-progress-bar {
             height: 100%;
-            background: white;
-            width: 0;
-            transition: width 5s linear;
+            object-fit: cover;
+            z-index: -2;
         }
-
-        .story-progress-bar.active {
+        
+        .hero-video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, 
+                rgba(0,0,0,0.5) 0%, 
+                rgba(0,0,0,0.3) 50%, 
+                rgba(0,0,0,0.6) 100%);
+            z-index: -1;
         }
-
+        
+        /* Stories responsivos */
+        .stories-container {
+            position: relative;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            height: 400px;
+            background: #000;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+        
+        @media (min-width: 768px) {
+            .stories-container {
+                height: 500px;
+            }
+        }
+        
+        @media (min-width: 1024px) {
+            .stories-container {
+                height: 600px;
+            }
+        }
+        
+        .story-item {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: none;
+        }
+        
+        .story-item.active {
+            display: block;
+        }
+        
         .story-content {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
-
-        .story-nav {
-            position: absolute;
-            top: 0;
-            width: 40%;
-            height: 100%;
-            z-index: 5;
-            cursor: pointer;
-        }
-
-        .story-nav.prev {
-            left: 0;
-        }
-
-        .story-nav.next {
-            right: 0;
-        }
-
-        .story-info {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            padding: 20px;
-            background: linear-gradient(to top, rgba(0, 0, 0, 0), transparent);
-            color: white;
-            z-index: 5;
-        }
-
-        .story-thumbnails {
-            display: flex;
-            justify-content: center;
-            gap: 8px;
-            margin-top: 15px;
-        }
-
-        .story-thumbnail {
-            width: 8px;
-            height: 8px;
+        
+        /* Testimonials responsivos */
+        .testimonial-card {
+            background: linear-gradient(135deg, var(--gray-50) 0%, white 100%);
+            border-left: 4px solid var(--primary);
+            padding: 1.5rem;
             border-radius: 8px;
+            position: relative;
+            width: 100%;
+        }
+        
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            font-size: 4rem;
+            color: var(--primary-light);
+            font-family: Georgia, serif;
+        }
+        
+        /* Pricing responsivo */
+        .pricing-card {
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            position: relative;
             overflow: hidden;
-            cursor: pointer;
-            border: 6px solid transparent;
-            transition: all 0.3s ease;
-            position: relative;
-        }
-
-        .story-thumbnail.active {
-            border-color: #1d83e293;
-            transform: scale(1.1);
-        }
-
-        .story-thumbnail img {
             width: 100%;
-            height: 100%;
-            object-fit: cover;
         }
-
-        .story-pause {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            z-index: 10;
-            color: white;
-            cursor: pointer;
-            background: rgba(0, 0, 0, 0.5);
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        
+        .pricing-card.featured {
+            transform: scale(1);
+            box-shadow: 0 20px 40px rgba(233, 30, 99, 0.2);
         }
-
-        .story-mute {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            z-index: 10;
-            color: white;
-            cursor: pointer;
-            background: rgba(0, 0, 0, 0.5);
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            display: none;
-            /* Hidden by default */
-            align-items: center;
-            justify-content: center;
+        
+        @media (min-width: 1024px) {
+            .pricing-card.featured {
+                transform: scale(1.05);
+            }
         }
-
-        .video-indicator {
-            position: absolute;
-            top: 5px;
-            right: 5px;
-            background: rgba(0, 0, 0, 0.5);
-            color: white;
-            border-radius: 50%;
-            width: 24px;
-            height: 24px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 6;
-        }
-
-        .video-placeholder {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            z-index: 5;
-            background: rgba(0, 0, 0, 0.5);
-            color: white;
-            border-radius: 50%;
-            width: 60px;
-            height: 60px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .step-number {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background-color: #F59E0B;
-            color: white;
-            font-weight: 700;
-            font-size: 1.25rem;
-            margin-right: 1rem;
-        }
-
-        .process-step {
-            display: flex;
-            align-items: center;
-            margin-bottom: 1.5rem;
-        }
-
-        .newsletter-input {
-            border: 2px solid #F59E0B;
-            border-radius: 50px;
-            padding: 0.75rem 1.5rem;
+        
+        /* FAQ responsivo */
+        .faq-item {
+            background: white;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             width: 100%;
-            max-width: 400px;
         }
-
-        .newsletter-button {
-            background-color: #F59E0B;
-            color: white;
-            border-radius: 50px;
-            padding: 0.75rem 2rem;
+        
+        .faq-question {
+            padding: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             font-weight: 600;
+            transition: background-color 0.3s ease;
+            width: 100%;
+        }
+        
+        .faq-question:hover {
+            background-color: var(--gray-50);
+        }
+        
+        .faq-answer {
+            padding: 0 1.5rem;
+            max-height: 0;
+            overflow: hidden;
             transition: all 0.3s ease;
+            width: 100%;
         }
-
-        .newsletter-button:hover {
-            background-color: #d97706;
-            transform: translateY(-2px);
+        
+        .faq-item.active .faq-answer {
+            padding: 0 1.5rem 1.5rem;
+            max-height: 500px;
         }
-
-        .footer-link {
-            transition: color 0.3s ease;
+        
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
         }
-
-        .footer-link:hover {
-            color: #F59E0B;
+        
+        .faq-icon {
+            transition: transform 0.3s ease;
+            flex-shrink: 0;
         }
-
-        .social-icon {
-            transition: all 0.3s ease;
+        
+        /* Grid responsivos */
+        .grid-responsive {
+            display: grid;
+            gap: 1.5rem;
+            width: 100%;
         }
-
-        .social-icon:hover {
-            transform: translateY(-3px);
+        
+        .grid-cols-1 { grid-template-columns: 1fr; }
+        .grid-cols-2 { grid-template-columns: repeat(2, 1fr); }
+        .grid-cols-3 { grid-template-columns: repeat(3, 1fr); }
+        .grid-cols-4 { grid-template-columns: repeat(4, 1fr); }
+        .grid-cols-5 { grid-template-columns: repeat(5, 1fr); }
+        
+        @media (max-width: 640px) {
+            .grid-cols-2,
+            .grid-cols-3,
+            .grid-cols-4,
+            .grid-cols-5 {
+                grid-template-columns: 1fr;
+            }
         }
-
-        .footer-bg {
-            background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+        
+        @media (min-width: 641px) and (max-width: 1023px) {
+            .grid-cols-3,
+            .grid-cols-4,
+            .grid-cols-5 {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
-
-        .hero-bg {
-            background-image: url('https://sfile.chatglm.cn/images-ppt/1ab95102861e.jpg');
-            background-size: cover;
-            background-position: center;
-            position: relative;
+        
+        /* Flex responsivo */
+        .flex-responsive {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
         }
-
-        .hero-overlay {
-            background: rgba(0, 0, 0, 0.55);
+        
+        .flex-col-mobile {
+            flex-direction: column;
         }
-
-        .roun {
-            border-radius: 20%;
+        
+        @media (min-width: 768px) {
+            .flex-col-mobile {
+                flex-direction: row;
+            }
+        }
+        
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: var(--gray-100);
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, var(--primary) 0%, var(--primary-dark) 100%);
+            border-radius: 4px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(180deg, var(--primary-light) 0%, var(--primary) 100%);
+        }
+        
+        /* Mobile optimizations */
+        @media (max-width: 768px) {
+            .floating { animation: none; }
+            .hover-lift:hover { transform: none; }
+            
+            .text-center-mobile {
+                text-align: center;
+            }
+            
+            .hidden-mobile {
+                display: none;
+            }
+            
+            .full-width-mobile {
+                width: 100%;
+            }
+        }
+        
+        /* Print Styles */
+        @media print {
+            .no-print { display: none !important; }
+            .hero-video { display: none !important; }
+            .mobile-menu { display: none !important; }
+            .mobile-menu-overlay { display: none !important; }
+        }
+        
+        /* Accessibility */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0,0,0,0);
+            white-space: nowrap;
+            border: 0;
+        }
+        
+        /* Focus visible */
+        *:focus-visible {
+            outline: 2px solid var(--primary);
+            outline-offset: 2px;
+        }
+        
+        /* Reduced motion */
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
         }
     </style>
 </head>
-
 <body class="font-sans flex flex-col min-h-screen">
-    <div class="flex-grow">
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="fixed inset-0 bg-white z-50 flex items-center justify-center">
+        <div class="text-center">
+            <div class="w-20 h-20 mx-auto mb-6 rounded-full primary-bg-gradient flex items-center justify-center floating">
+                <i class="fas fa-heart text-4xl text-white heart-beat"></i>
+            </div>
+            <div class="w-16 h-1 bg-gray-200 rounded-full overflow-hidden mb-4">
+                <div class="h-full bg-primary loading-skeleton"></div>
+            </div>
+            <p class="text-primary text-sm tracking-wider">PREPARANDO SUA SURPRESA...</p>
+        </div>
+    </div>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobileMenuOverlay" class="mobile-menu-overlay"></div>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="mobile-menu">
+        <div class="p-6">
+            <div class="flex justify-between items-center mb-8">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 rounded-full primary-bg-gradient flex items-center justify-center">
+                        <i class="fas fa-heart text-white text-lg"></i>
+                    </div>
+                    <span class="text-xl font-bold primary-gradient font-playfair">Mimos STP</span>
+                </div>
+                <button id="closeMobileMenu" class="text-gray-400 hover:text-gray-600">
+                    <i class="fas fa-times text-2xl"></i>
+                </button>
+            </div>
+            
+            <nav class="space-y-4">
+                <a href="#home" class="mobile-nav-link block py-3 px-4 text-gray-200 hover:text-primary hover:bg-pink-50 rounded-lg transition-colors">
+                    <i class="fas fa-home mr-3"></i>Início
+                </a>
+                <a href="#sobre" class="mobile-nav-link block py-3 px-4 text-gray-200 hover:text-primary hover:bg-pink-50 rounded-lg transition-colors">
+                    <i class="fas fa-info-circle mr-3"></i>Sobre Nós
+                </a>
+                <a href="#servicos" class="mobile-nav-link block py-3 px-4 text-gray-700 hover:text-primary hover:bg-pink-50 rounded-lg transition-colors">
+                    <i class="fas fa-gift mr-3"></i>Serviços
+                </a>
+                <a href="#processo" class="mobile-nav-link block py-3 px-4 text-gray-700 hover:text-primary hover:bg-pink-50 rounded-lg transition-colors">
+                    <i class="fas fa-route mr-3"></i>Como Funciona
+                </a>
+                <a href="#depoimentos" class="mobile-nav-link block py-3 px-4 text-gray-700 hover:text-primary hover:bg-pink-50 rounded-lg transition-colors">
+                    <i class="fas fa-star mr-3"></i>Depoimentos
+                </a>
+                <a href="#contato" class="mobile-nav-link block py-3 px-4 text-gray-700 hover:text-primary hover:bg-pink-50 rounded-lg transition-colors">
+                    <i class="fas fa-envelope mr-3"></i>Contato
+                </a>
+            </nav>
+            
+            <div class="mt-8 pt-8 border-t border-gray-200">
+                <div class="space-y-4">
+                    <a href="tel:+2399988158" class="flex items-center text-gray-600 hover:text-primary">
+                        <i class="fas fa-phone mr-3"></i>
+                        <span class="text-sm">+239 9988158</span>
+                    </a>
+                    <a href="https://wa.me/2399988158" target="_blank" class="btn btn-primary w-full">
+                        <i class="fab fa-whatsapp mr-2"></i>Fale Conosco
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="hidden navbar glass-morphism transition-all duration-500 no-print" id="navbar">
+        <div class="container">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 md:w-12 md:h-12 rounded-full primary-bg-gradient flex items-center justify-center shadow-lg">
+                        <i class="fas fa-heart text-white text-lg md:text-xl"></i>
+                    </div>
+                    <div class="hidden sm:block">
+                        <span class="text-xl md:text-2xl font-bold primary-gradient font-playfair">Mimos STP</span>
+                        <p class="text-xs text-gray-200 hidden md:block">Especialistas em Momentos</p>
+                    </div>
+                </div>
+                
+                <div class="hidden lg:flex items-center space-x-6 xl:space-x-8">
+                    <a href="#home" class="nav-link text-gray-200 hover-primary transition-all duration-300 relative group font-medium text-sm xl:text-base">
+                        <span>Início</span>
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="#sobre" class="nav-link text-gray-600 hover-primary transition-all duration-300 relative group font-medium text-sm xl:text-base">
+                        <span>Sobre Nós</span>
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="#servicos" class="nav-link text-gray-600 hover-primary transition-all duration-300 relative group font-medium text-sm xl:text-base">
+                        <span>Serviços</span>
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="#processo" class="nav-link text-gray-600 hover-primary transition-all duration-300 relative group font-medium text-sm xl:text-base">
+                        <span>Como Funciona</span>
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="#depoimentos" class="nav-link text-gray-600 hover-primary transition-all duration-300 relative group font-medium text-sm xl:text-base">
+                        <span>Depoimentos</span>
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="#contato" class="nav-link text-gray-600 hover-primary transition-all duration-300 relative group font-medium text-sm xl:text-base">
+                        <span>Contato</span>
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-3 xl:space-x-4">
+                    <a href="tel:+2399988158" class="text-gray-600 hover-primary transition-colors text-sm xl:text-base hidden lg:block">
+                        <i class="fas fa-phone mr-2"></i>
+                        <span class="hidden xl:inline">+239 9988158</span>
+                    </a>
+                    <a href="https://wa.me/2399988158" target="_blank" class="btn btn-primary text-sm xl:text-base px-3 xl:px-4">
+                        <i class="fab fa-whatsapp mr-1 xl:mr-2"></i>
+                        <span class="hidden sm:inline">Fale Conosco</span>
+                        <span class="sm:hidden">WhatsApp</span>
+                    </a>
+                </div>
+                
+                <button id="mobile-menu-btn" class="lg:hidden text-primary text-2xl">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
     <!-- Hero Section -->
-    <section class="hero-bg min-h-[calc(100vh-0px)] flex items-center justify-center px-4 py-12 relative overflow-hidden">
-        <div class="hero-overlay absolute inset-0 grid-pattern"></div>
-        <div class="max-w-4xl mx-auto text-center relative z-10">
-            <h1 class="font-serif text-5xl md:text-6xl lg:text-7xl font-bold text-gray-200 mb-6 text-shadow">
-                Levamos a Felicidade até você
-            </h1>
-            <p class="text-xl md:text-2xl text-gray-500 mb-10 max-w-2xl mx-auto">
-                Momentos únicos, entregues com amor e emoção.
-            </p>
-            <a href="https://wa.me/2399988158" target="_blank"
-                class="whatsapp-green text-white font-semibold py-4 px-8 rounded-full inline-flex items-center text-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-                <i class="material-icons mr-2">chat</i>
-                Peça sua surpresa agora
-            </a>
+    <section id="home" class="hero-bg min-h-screen flex items-center justify-center px-4 py-12 relative overflow-hidden">
+        <video class="hero-video" autoplay muted loop playsinline>
+            <source src="surp1.mp4" type="video/mp4">
+            Seu navegador não suporta o elemento de vídeo.
+        </video>
+        <div class="hero-video-overlay"></div>
+        <div class="container relative z-10">
+            <div class="text-center max-w-4xl mx-auto">
+                <div class="mb-6 md:mb-8 fade-in-up">
+                    <div class="inline-flex items-center bg-white/20 backdrop-blur-sm rounded-full px-3 md:px-4 py-2 mb-4 md:mb-6">
+                        <span class="badge badge-primary mr-2 text-xs">NOVO</span>
+                        <span class="text-white text-sm">Propostas de Casamento Personalizadas</span>
+                    </div>
+                    <h1 class="font-playfair text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-4 md:mb-6 text-shadow">
+                        Criamos <span class="text-yellow-300">Momentos</span> que Duram para Sempre
+                    </h1>
+                    <p class="text-lg md:text-xl lg:text-2xl text-gray-200 mb-6 md:mb-8 max-w-2xl mx-auto leading-relaxed px-4">
+                        Transformamos ocasiões especiais em memórias inesquecíveis com surpresas personalizadas e entregas emocionantes
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center items-center px-4">
+                        <a href="https://wa.me/2399988158" target="_blank" class="btn btn-primary text-base md:text-lg px-6 md:px-8 py-3 md:py-4 w-full sm:w-auto">
+                            <i class="fab fa-whatsapp mr-2"></i>
+                            Solicitar Orçamento
+                        </a>
+                        <a href="#servicos" class="btn btn-outline text-base md:text-lg px-6 md:px-8 py-3 md:py-4 text-white border-white hover:bg-white hover:text-primary w-full sm:w-auto">
+                            <i class="fas fa-sparkles mr-2"></i>
+                            Ver Serviços
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- <div class="mt-12 md:mt-16 grid grid-cols-3 gap-4 md:gap-8 text-center px-4">
+                    <div class="fade-in-up">
+                        <div class="text-3xl md:text-4xl font-bold text-yellow-300 mb-2">500+</div>
+                        <div class="text-xs md:text-sm text-gray-200">Surpresas Realizadas</div>
+                    </div>
+                    <div class="fade-in-up" style="animation-delay: 0.2s">
+                        <div class="text-3xl md:text-4xl font-bold text-yellow-300 mb-2">100%</div>
+                        <div class="text-xs md:text-sm text-gray-200">Satisfação Garantida</div>
+                    </div>
+                    <div class="fade-in-up" style="animation-delay: 0.4s">
+                        <div class="text-3xl md:text-4xl font-bold text-yellow-300 mb-2">5★</div>
+                        <div class="text-xs md:text-sm text-gray-200">Avaliação Média</div>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+        
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 floating">
+            <i class="fas fa-chevron-down text-white text-2xl"></i>
+        </div>
+    </section>
+
+    <!-- Trust Badges -->
+    <section class="py-6 md:py-8 px-4 bg-gray-50 border-y border-gray-200">
+        <div class="container">
+            <div class="flex flex-wrap justify-center items-center gap-4 md:gap-8 lg:gap-16">
+                <div class="flex items-center space-x-2 text-gray-600">
+                    <i class="fas fa-shield-alt text-xl md:text-2xl text-green-500"></i>
+                    <span class="text-xs md:text-sm font-medium">100% Seguro</span>
+                </div>
+                <div class="flex items-center space-x-2 text-gray-600">
+                    <i class="fas fa-truck text-xl md:text-2xl text-blue-500"></i>
+                    <span class="text-xs md:text-sm font-medium">Entrega Garantida</span>
+                </div>
+                <div class="flex items-center space-x-2 text-gray-600">
+                    <i class="fas fa-award text-xl md:text-2xl text-yellow-500"></i>
+                    <span class="text-xs md:text-sm font-medium">Qualidade Premium</span>
+                </div>
+                <div class="flex items-center space-x-2 text-gray-600">
+                    <i class="fas fa-heart text-xl md:text-2xl text-red-500"></i>
+                    <span class="text-xs md:text-sm font-medium">Feito com Amor</span>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Sobre Nós -->
-    <section class="py-16 px-4 bg-white">
-        <div class="max-w-6xl mx-auto">
-            <div class="flex flex-col md:flex-row items-center gap-12">
-                <div class="md:w-1/2">
-                    <h2 class="font-serif text-4xl font-bold text-gray-800 mb-6">Sobre Nós</h2>
-                    <p class="text-lg text-gray-700 leading-relaxed mb-4">
-                        Está sem tempo? Sem ideia? Acha que preparar uma surpresa é complicado? Você se enganou, nós
-                        vamos te ajudar!
+    <section id="sobre" class="py-16 md:py-20 px-4 bg-white">
+        <div class="container">
+            <div class="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+                <div class="slide-in-left order-2 lg:order-1">
+                    <div class="inline-flex items-center bg-pink-100 rounded-full px-3 md:px-4 py-2 mb-4 md:mb-6">
+                        <i class="fas fa-heart text-primary mr-2"></i>
+                        <span class="text-primary font-medium text-sm">Nossa História</span>
+                    </div>
+                    <h2 class="font-playfair text-3xl md:text-4xl font-bold text-gray-800 mb-4 md:mb-6">
+                        Transformamos Sonhos em <span class="primary-gradient">Realidade</span>
+                    </h2>
+                    <p class="text-base md:text-lg text-gray-700 leading-relaxed mb-4 md:mb-6">
+                        Está sem tempo? Sem ideia? Acha que preparar uma surpresa é complicado? Você se enganou, nós vamos te ajudar! 
+                        No Mimos STP, acreditamos que cada momento especial merece ser celebrado de forma única e inesquecível.
                     </p>
-                    <p class="text-lg text-gray-700 leading-relaxed">
-                        Nossa missão é realizar surpresas personalizadas e inesquecíveis. E para isso você não vai se
-                        preocupar pois nós pensamos em tudo para você. Oferecemos produtos e pacotes seguros e
-                        acessíveis para tornar cada momento especial!
+                    <p class="text-base md:text-lg text-gray-700 leading-relaxed mb-6 md:mb-8">
+                        Nossa missão é realizar surpresas personalizadas que emocionam e criam memórias duradouras. 
+                        Com anos de experiência e uma equipe dedicada, pensamos em cada detalhe para que você só precise aproveitar.
                     </p>
+                    
+                    <div class="grid grid-cols-2 gap-4 md:gap-6 mb-6 md:mb-8">
+                        <div class="flex items-start space-x-3">
+                            <div class="w-10 h-10 md:w-12 md:h-12 bg-pink-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-heart text-primary text-lg md:text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-800 mb-1 text-sm md:text-base">Feito com Amor</h4>
+                                <p class="text-xs md:text-sm text-gray-600">Cada detalhe pensado com carinho</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <div class="w-10 h-10 md:w-12 md:h-12 bg-yellow-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-star text-yellow-500 text-lg md:text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-800 mb-1 text-sm md:text-base">Qualidade Premium</h4>
+                                <p class="text-xs md:text-sm text-gray-600">Materiais selecionados e de primeira</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <div class="w-10 h-10 md:w-12 md:h-12 bg-purple-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-magic text-purple-500 text-lg md:text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-800 mb-1 text-sm md:text-base">Momentos Mágicos</h4>
+                                <p class="text-xs md:text-sm text-gray-600">Criamos experiências inesquecíveis</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <div class="w-10 h-10 md:w-12 md:h-12 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-clock text-green-500 text-lg md:text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-800 mb-1 text-sm md:text-base">Pontualidade</h4>
+                                <p class="text-xs md:text-sm text-gray-600">Entregas no horário combinado</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- <div class="flex flex-wrap gap-2 md:gap-4">
+                        <div class="badge badge-primary text-xs">
+                            <i class="fas fa-check mr-1"></i>5 Anos de Experiência
+                        </div>
+                        <div class="badge badge-secondary text-xs">
+                            <i class="fas fa-check mr-1"></i>Equipe Especializada
+                        </div>
+                        <div class="badge badge-accent text-xs">
+                            <i class="fas fa-check mr-1"></i>Suporte 24/7
+                        </div> 
+                    </div>-->
                 </div>
-                <div class="md:w-1/2">
-                    <img src="https://sfile.chatglm.cn/images-ppt/5adb64c87430.jpg"
-                        alt="Pessoas sorrindo ao receber presente" class="rounded-lg shadow-xl w-full">
+                <div class="slide-in-right order-1 lg:order-2">
+                    <div class="relative">
+                        <img src="https://picsum.photos/seed/mimos-team/600/700.jpg" alt="Equipe Mimos STP" class="rounded-2xl shadow-2xl w-full">
+                        <div class="absolute -bottom-4 -right-4 md:-bottom-6 md:-right-6 bg-white p-4 md:p-6 rounded-xl shadow-xl max-w-xs">
+                            <div class="flex items-center space-x-3 mb-3">
+                                <div class="w-10 h-10 md:w-12 md:h-12 bg-primary rounded-full flex items-center justify-center">
+                                    <i class="fas fa-quote-left text-white"></i>
+                                </div>
+                                <div>
+                                    <div class="flex text-yellow-400 mb-1">
+                                        <i class="fas fa-star text-sm"></i>
+                                        <i class="fas fa-star text-sm"></i>
+                                        <i class="fas fa-star text-sm"></i>
+                                        <i class="fas fa-star text-sm"></i>
+                                        <i class="fas fa-star text-sm"></i>
+                                    </div>
+                                    <p class="text-xs md:text-sm text-gray-600">Excelência reconhecida</p>
+                                </div>
+                            </div>
+                            <p class="text-gray-800 italic text-sm">"A felicidade está nas pequenas surpresas que fazem grande diferença"</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Como Funciona -->
-    <section class="py-16 px-4 bg-gray-50">
-        <div class="max-w-6xl mx-auto">
-            <h2 class="font-serif text-3xl md:text-4xl font-bold text-gray-800 text-center mb-12">Veja como é fácil
-                adquirir nossas surpresas</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <section id="processo" class="py-16 md:py-20 px-4 bg-gray-50">
+        <div class="container">
+            <div class="text-center mb-12 md:mb-16">
+                <div class="inline-flex items-center bg-purple-100 rounded-full px-3 md:px-4 py-2 mb-4 md:mb-6">
+                    <i class="fas fa-route text-purple-600 mr-2"></i>
+                    <span class="text-purple-600 font-medium text-sm">Nosso Processo</span>
+                </div>
+                <h2 class="font-playfair text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+                    Simples, Rápido e <span class="primary-gradient">Inesquecível</span>
+                </h2>
+                <div class="w-24 md:w-32 h-1 bg-primary mx-auto"></div>
+                <p class="text-gray-600 mt-4 max-w-2xl mx-auto text-sm md:text-base">
+                    Em apenas 5 passos, transformamos sua ideia em uma surpresa memorável
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6">
                 <!-- Passo 1 -->
-                <div class="bg-white rounded-lg p-6 card-shadow">
-                    <div class="process-step">
-                        <div class="step-number">1</div>
-                        <h3 class="font-semibold text-xl text-gray-800">Escolha o produto</h3>
+                <div class="card text-center hover-lift">
+                    <div class="relative mb-4">
+                        <div class="w-12 h-12 md:w-16 md:h-16 bg-primary rounded-full flex items-center justify-center text-white font-bold text-lg md:text-xl mx-auto">
+                            1
+                        </div>
+                        <div class="absolute -top-2 -right-2 w-6 h-6 md:w-8 md:h-8 bg-yellow-400 rounded-full flex items-center justify-center">
+                            <i class="fas fa-search text-white text-xs"></i>
+                        </div>
                     </div>
-                    <p class="text-gray-600">Primeiro você escolhe o produto que melhor se encaixa no seu momento</p>
+                    <h3 class="font-semibold text-base md:text-lg text-gray-800 mb-2">Escolha</h3>
+                    <p class="text-gray-600 text-xs md:text-sm">Selecione o serviço perfeito para seu momento especial</p>
                 </div>
 
                 <!-- Passo 2 -->
-                <div class="bg-white rounded-lg p-6 card-shadow">
-                    <div class="process-step">
-                        <div class="step-number">2</div>
-                        <h3 class="font-semibold text-xl text-gray-800">Selecione a cidade</h3>
+                <div class="card text-center hover-lift">
+                    <div class="relative mb-4">
+                        <div class="w-12 h-12 md:w-16 md:h-16 bg-primary rounded-full flex items-center justify-center text-white font-bold text-lg md:text-xl mx-auto">
+                            2
+                        </div>
+                        <div class="absolute -top-2 -right-2 w-6 h-6 md:w-8 md:h-8 bg-blue-400 rounded-full flex items-center justify-center">
+                            <i class="fas fa-map-marker-alt text-white text-xs"></i>
+                        </div>
                     </div>
-                    <p class="text-gray-600">Depois escolhe a cidade onde a surpresa será realizada</p>
+                    <h3 class="font-semibold text-base md:text-lg text-gray-800 mb-2">Localize</h3>
+                    <p class="text-gray-600 text-xs md:text-sm">Informe a cidade e o local da surpresa</p>
                 </div>
 
                 <!-- Passo 3 -->
-                <div class="bg-white rounded-lg p-6 card-shadow">
-                    <div class="process-step">
-                        <div class="step-number">3</div>
-                        <h3 class="font-semibold text-xl text-gray-800">Selecione o local e data</h3>
+                <div class="card text-center hover-lift">
+                    <div class="relative mb-4">
+                        <div class="w-12 h-12 md:w-16 md:h-16 bg-primary rounded-full flex items-center justify-center text-white font-bold text-lg md:text-xl mx-auto">
+                            3
+                        </div>
+                        <div class="absolute -top-2 -right-2 w-6 h-6 md:w-8 md:h-8 bg-green-400 rounded-full flex items-center justify-center">
+                            <i class="fas fa-calendar text-white text-xs"></i>
+                        </div>
                     </div>
-                    <p class="text-gray-600">Defina o local e a data ideal para a sua surpresa</p>
+                    <h3 class="font-semibold text-base md:text-lg text-gray-800 mb-2">Agende</h3>
+                    <p class="text-gray-600 text-xs md:text-sm">Defina data e hora ideais para a surpresa</p>
                 </div>
 
                 <!-- Passo 4 -->
-                <div class="bg-white rounded-lg p-6 card-shadow">
-                    <div class="process-step">
-                        <div class="step-number">4</div>
-                        <h3 class="font-semibold text-xl text-gray-800">Personalize</h3>
+                <div class="card text-center hover-lift">
+                    <div class="relative mb-4">
+                        <div class="w-12 h-12 md:w-16 md:h-16 bg-primary rounded-full flex items-center justify-center text-white font-bold text-lg md:text-xl mx-auto">
+                            4
+                        </div>
+                        <div class="absolute -top-2 -right-2 w-6 h-6 md:w-8 md:h-8 bg-purple-400 rounded-full flex items-center justify-center">
+                            <i class="fas fa-palette text-white text-xs"></i>
+                        </div>
                     </div>
-                    <p class="text-gray-600">Escolha como personalizar e incrementar a sua surpresa</p>
+                    <h3 class="font-semibold text-base md:text-lg text-gray-800 mb-2">Personalize</h3>
+                    <p class="text-gray-600 text-xs md:text-sm">Adicione detalhes especiais e personalizados</p>
                 </div>
 
                 <!-- Passo 5 -->
-                <div class="bg-white rounded-lg p-6 card-shadow">
-                    <div class="process-step">
-                        <div class="step-number">5</div>
-                        <h3 class="font-semibold text-xl text-gray-800">Finalize a compra</h3>
+                <div class="card text-center hover-lift bg-pink-100 border-2 border-primary">
+                    <div class="relative mb-4">
+                        <div class="w-12 h-12 md:w-16 md:h-16 bg-primary rounded-full flex items-center justify-center text-white font-bold text-lg md:text-xl mx-auto">
+                            5
+                        </div>
+                        <div class="absolute -top-2 -right-2 w-6 h-6 md:w-8 md:h-8 bg-red-400 rounded-full flex items-center justify-center pulse">
+                            <i class="fas fa-heart text-white text-xs"></i>
+                        </div>
                     </div>
-                    <p class="text-gray-600">Coloque no carrinho e finalize a compra!</p>
+                    <h3 class="font-semibold text-base md:text-lg text-gray-800 mb-2">Pronto!</h3>
+                    <p class="text-gray-600 text-xs md:text-sm">Relaxe e deixe a mágica acontecer</p>
                 </div>
-
-                <!-- Resultado -->
-                <div class="bg-gradient-to-r from-yellow-100 to-pink-100 rounded-lg p-6 card-shadow">
-                    <div class="flex items-center mb-4">
-                        <i class="material-icons text-3xl text-amber-600 mr-3">stars</i>
-                        <h3 class="font-semibold text-xl text-gray-800">Pronto!</h3>
-                    </div>
-                    <p class="text-gray-600">Nossa equipe cuidará dos detalhes para que sua surpresa seja impecável e
-                        inesquecível!</p>
-                </div>
+            </div>
+            
+            <div class="text-center mt-8 md:mt-12">
+                <a href="https://wa.me/2399988158" target="_blank" class="btn btn-primary text-base md:text-lg px-6 md:px-8 py-3 md:py-4">
+                    <i class="fas fa-rocket mr-2"></i>
+                    Começar Agora
+                </a>
             </div>
         </div>
     </section>
 
     <!-- Nossos Serviços -->
-    <section class="py-16 px-4 bg-white">
-        <div class="max-w-6xl mx-auto">
-            <h2 class="font-serif text-3xl md:text-4xl font-bold text-gray-800 text-center mb-12">Nossos Serviços</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <section id="servicos" class="py-16 md:py-20 px-4 bg-white">
+        <div class="container">
+            <div class="text-center mb-12 md:mb-16">
+                <div class="inline-flex items-center bg-pink-100 rounded-full px-3 md:px-4 py-2 mb-4 md:mb-6">
+                    <i class="fas fa-gift text-primary mr-2"></i>
+                    <span class="text-primary font-medium text-sm">Nossos Serviços</span>
+                </div>
+                <h2 class="font-playfair text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+                    Serviços <span class="primary-gradient">Personalizados</span> para Você
+                </h2>
+                <div class="w-24 md:w-32 h-1 bg-primary mx-auto"></div>
+                <p class="text-gray-600 mt-4 max-w-2xl mx-auto text-sm md:text-base">
+                    Cada serviço é cuidadosamente criado para transformar momentos em memórias eternas
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
                 <!-- Aniversários Especiais -->
-                <div class="service-card bg-white rounded-lg p-8 card-shadow">
-                    <div class="icon-circle icon-gold">
-                        <i class="material-icons text-4xl text-amber-600">cake</i>
+                <div class="service-card bg-white rounded-2xl shadow-lg overflow-hidden">
+                    <div class="relative h-48 md:h-64 overflow-hidden">
+                        <img src="https://picsum.photos/seed/birthday-surprise/600/400.jpg" alt="Aniversário Especial" class="service-image w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                        <div class="absolute top-4 left-4">
+                            <div class="w-12 h-12 md:w-16 md:h-16 bg-pink-100 rounded-2xl flex items-center justify-center shadow-lg">
+                                <i class="fas fa-birthday-cake text-2xl md:text-3xl text-primary"></i>
+                            </div>
+                        </div>
+                        <div class="absolute top-4 right-4">
+                            <span class="badge badge-primary text-xs">Popular</span>
+                        </div>
+                        <div class="absolute bottom-4 left-4 right-4">
+                            <h3 class="text-white text-xl md:text-2xl font-bold font-playfair">Aniversários Especiais</h3>
+                        </div>
                     </div>
-                    <h3 class="font-serif text-2xl font-semibold text-gray-800 mb-4 text-center">Aniversários Especiais
-                    </h3>
-                    <p class="text-gray-600 text-center mb-6">Surpresas personalizadas que emocionam.</p>
-                    <img src="https://sfile.chatglm.cn/images-ppt/285964e01cfe.jpg"
-                        alt="Bolo de aniversário com presente" class="rounded-lg w-full h-48 object-cover">
+                    <div class="p-4 md:p-6">
+                        <p class="text-gray-600 mb-4 text-sm md:text-base">Celebrações inesquecíveis com decorações temáticas, bolos personalizados e muitas surpresas.</p>
+                        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4 gap-2">
+                            <div class="flex items-center text-xs md:text-sm text-gray-500">
+                                <i class="fas fa-clock mr-2"></i>
+                                <span>2-3 horas</span>
+                            </div>
+                            <div class="flex items-center text-xs md:text-sm text-gray-500">
+                                <i class="fas fa-users mr-2"></i>
+                                <span>Até 50 pessoas</span>
+                            </div>
+                        </div>
+                        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+                            <div class="text-center sm:text-left">
+                                <span class="text-lg md:text-xl font-bold text-primary">A partir de</span>
+                                <div class="text-2xl md:text-3xl font-bold text-gray-800">25.000 Db</div>
+                            </div>
+                            <button onclick="openServiceDetailModal('aniversario')" class="btn btn-primary w-full sm:w-auto">
+                                <i class="fas fa-arrow-right mr-2"></i>Saiba Mais
+                            </button>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Decoração Romântica -->
-                <div class="service-card bg-white rounded-lg p-8 card-shadow">
-                    <div class="icon-circle icon-pink">
-                        <i class="material-icons text-4xl text-pink-600">favorite</i>
+                <div class="service-card bg-white rounded-2xl shadow-lg overflow-hidden">
+                    <div class="relative h-48 md:h-64 overflow-hidden">
+                        <img src="https://picsum.photos/seed/romantic-decoration/600/400.jpg" alt="Decoração Romântica" class="service-image w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                        <div class="absolute top-4 left-4">
+                            <div class="w-12 h-12 md:w-16 md:h-16 bg-pink-100 rounded-2xl flex items-center justify-center shadow-lg">
+                                <i class="fas fa-heart text-2xl md:text-3xl text-primary"></i>
+                            </div>
+                        </div>
+                        <div class="absolute bottom-4 left-4 right-4">
+                            <h3 class="text-white text-xl md:text-2xl font-bold font-playfair">Decoração Romântica</h3>
+                        </div>
                     </div>
-                    <h3 class="font-serif text-2xl font-semibold text-gray-800 mb-4 text-center">Decoração Romântica
-                    </h3>
-                    <p class="text-gray-600 text-center mb-6">Ambientes decorados para momentos especiais.</p>
-                    <img src="https://sfile.chatglm.cn/images-ppt/1ab95102861e.jpg" alt="Decoração romântica"
-                        class="rounded-lg w-full h-48 object-cover">
+                    <div class="p-4 md:p-6">
+                        <p class="text-gray-600 mb-4 text-sm md:text-base">Ambientes decorados com flores, velas, música e detalhes que criam a atmosfera perfeita.</p>
+                        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4 gap-2">
+                            <div class="flex items-center text-xs md:text-sm text-gray-500">
+                                <i class="fas fa-clock mr-2"></i>
+                                <span>1-2 horas</span>
+                            </div>
+                            <div class="flex items-center text-xs md:text-sm text-gray-500">
+                                <i class="fas fa-map-marker-alt mr-2"></i>
+                                <span>Qualquer local</span>
+                            </div>
+                        </div>
+                        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+                            <div class="text-center sm:text-left">
+                                <span class="text-lg md:text-xl font-bold text-primary">A partir de</span>
+                                <div class="text-2xl md:text-3xl font-bold text-gray-800">15.000 Db</div>
+                            </div>
+                            <button onclick="openServiceDetailModal('decoracao')" class="btn btn-primary w-full sm:w-auto">
+                                <i class="fas fa-arrow-right mr-2"></i>Saiba Mais
+                            </button>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Picnic -->
-                <div class="service-card bg-white rounded-lg p-8 card-shadow">
-                    <div class="icon-circle icon-green">
-                        <i class="material-icons text-4xl text-green-600">park</i>
+                <div class="service-card bg-white rounded-2xl shadow-lg overflow-hidden">
+                    <div class="relative h-48 md:h-64 overflow-hidden">
+                        <img src="https://picsum.photos/seed/picnic-romantic/600/400.jpg" alt="Picnic Romântico" class="service-image w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                        <div class="absolute top-4 left-4">
+                            <div class="w-12 h-12 md:w-16 md:h-16 bg-green-100 rounded-2xl flex items-center justify-center shadow-lg">
+                                <i class="fas fa-umbrella-beach text-2xl md:text-3xl text-green-500"></i>
+                            </div>
+                        </div>
+                        <div class="absolute bottom-4 left-4 right-4">
+                            <h3 class="text-white text-xl md:text-2xl font-bold font-playfair">Picnic Exclusivo</h3>
+                        </div>
                     </div>
-                    <h3 class="font-serif text-2xl font-semibold text-gray-800 mb-4 text-center">Picnic</h3>
-                    <p class="text-gray-600 text-center mb-6">Momentos ao ar livre com tudo preparado.</p>
-                    <img src="https://sfile.chatglm.cn/images-ppt/daca2f317505.jpg" alt="Picnic romântico"
-                        class="rounded-lg w-full h-48 object-cover">
+                    <div class="p-4 md:p-6">
+                        <p class="text-gray-600 mb-4 text-sm md:text-base">Momentos ao ar livre com cestas gourmet, mantas decoradas e paisagens deslumbrantes.</p>
+                        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4 gap-2">
+                            <div class="flex items-center text-xs md:text-sm text-gray-500">
+                                <i class="fas fa-clock mr-2"></i>
+                                <span>3-4 horas</span>
+                            </div>
+                            <div class="flex items-center text-xs md:text-sm text-gray-500">
+                                <i class="fas fa-sun mr-2"></i>
+                                <span>Perfeito para pôr do sol</span>
+                            </div>
+                        </div>
+                        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+                            <div class="text-center sm:text-left">
+                                <span class="text-lg md:text-xl font-bold text-primary">A partir de</span>
+                                <div class="text-2xl md:text-3xl font-bold text-gray-800">20.000 Db</div>
+                            </div>
+                            <button onclick="openServiceDetailModal('picnic')" class="btn btn-primary w-full sm:w-auto">
+                                <i class="fas fa-arrow-right mr-2"></i>Saiba Mais
+                            </button>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Jantar Romântico -->
-                <div class="service-card bg-white rounded-lg p-8 card-shadow">
-                    <div class="icon-circle icon-purple">
-                        <i class="material-icons text-4xl text-purple-600">restaurant</i>
+                <div class="service-card bg-white rounded-2xl shadow-lg overflow-hidden">
+                    <div class="relative h-48 md:h-64 overflow-hidden">
+                        <img src="https://picsum.photos/seed/romantic-dinner/600/400.jpg" alt="Jantar Romântico" class="service-image w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                        <div class="absolute top-4 left-4">
+                            <div class="w-12 h-12 md:w-16 md:h-16 bg-purple-100 rounded-2xl flex items-center justify-center shadow-lg">
+                                <i class="fas fa-utensils text-2xl md:text-3xl text-purple-500"></i>
+                            </div>
+                        </div>
+                        <div class="absolute bottom-4 left-4 right-4">
+                            <h3 class="text-white text-xl md:text-2xl font-bold font-playfair">Jantar Romântico</h3>
+                        </div>
                     </div>
-                    <h3 class="font-serif text-2xl font-semibold text-gray-800 mb-4 text-center">Jantar Romântico</h3>
-                    <p class="text-gray-600 text-center mb-6">Jantares especiais para celebrar o amor.</p>
-                    <img src="https://sfile.chatglm.cn/images-ppt/e03432169208.jpg" alt="Jantar romântico"
-                        class="rounded-lg w-full h-48 object-cover">
+                    <div class="p-4 md:p-6">
+                        <p class="text-gray-600 mb-4 text-sm md:text-base">Jantares exclusivos com menu degustação, vinhos selecionados e ambiente intimista.</p>
+                        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4 gap-2">
+                            <div class="flex items-center text-xs md:text-sm text-gray-500">
+                                <i class="fas fa-clock mr-2"></i>
+                                <span>4-5 horas</span>
+                            </div>
+                            <div class="flex items-center text-xs md:text-sm text-gray-500">
+                                <i class="fas fa-wine-glass mr-2"></i>
+                                <span>Com harmonização</span>
+                            </div>
+                        </div>
+                        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+                            <div class="text-center sm:text-left">
+                                <span class="text-lg md:text-xl font-bold text-primary">A partir de</span>
+                                <div class="text-2xl md:text-3xl font-bold text-gray-800">35.000 Db</div>
+                            </div>
+                            <button onclick="openServiceDetailModal('jantar')" class="btn btn-primary w-full sm:w-auto">
+                                <i class="fas fa-arrow-right mr-2"></i>Saiba Mais
+                            </button>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Surpresa na Caixa -->
-                <div class="service-card bg-white rounded-lg p-8 card-shadow">
-                    <div class="icon-circle icon-blue">
-                        <i class="material-icons text-4xl text-blue-600">card_giftcard</i>
+                <div class="service-card bg-white rounded-2xl shadow-lg overflow-hidden">
+                    <div class="relative h-48 md:h-64 overflow-hidden">
+                        <img src="https://picsum.photos/seed/gift-box/600/400.jpg" alt="Surpresa na Caixa" class="service-image w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                        <div class="absolute top-4 left-4">
+                            <div class="w-12 h-12 md:w-16 md:h-16 bg-blue-100 rounded-2xl flex items-center justify-center shadow-lg">
+                                <i class="fas fa-gift text-2xl md:text-3xl text-blue-500"></i>
+                            </div>
+                        </div>
+                        <div class="absolute bottom-4 left-4 right-4">
+                            <h3 class="text-white text-xl md:text-2xl font-bold font-playfair">Caixa de Surpresa</h3>
+                        </div>
                     </div>
-                    <h3 class="font-serif text-2xl font-semibold text-gray-800 mb-4 text-center">Surpresa na Caixa</h3>
-                    <p class="text-gray-600 text-center mb-6">Presentes únicos e personalizados.</p>
-                    <img src="https://sfile.chatglm.cn/images-ppt/d897f7e99073.jpg"
-                        alt="Caixa de presente personalizada" class="rounded-lg w-full h-48 object-cover">
+                    <div class="p-4 md:p-6">
+                        <p class="text-gray-600 mb-4 text-sm md:text-base">Presentes exclusivos embalados com carinho e entregues com uma surpresa especial.</p>
+                        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4 gap-2">
+                            <div class="flex items-center text-xs md:text-sm text-gray-500">
+                                <i class="fas fa-truck mr-2"></i>
+                                <span>Entrega expressa</span>
+                            </div>
+                            <div class="flex items-center text-xs md:text-sm text-gray-500">
+                                <i class="fas fa-box mr-2"></i>
+                                <span>Embalagem premium</span>
+                            </div>
+                        </div>
+                        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+                            <div class="text-center sm:text-left">
+                                <span class="text-lg md:text-xl font-bold text-primary">A partir de</span>
+                                <div class="text-2xl md:text-3xl font-bold text-gray-800">10.000 Db</div>
+                            </div>
+                            <button onclick="openServiceDetailModal('caixa')" class="btn btn-primary w-full sm:w-auto">
+                                <i class="fas fa-arrow-right mr-2"></i>Saiba Mais
+                            </button>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Proposta de Casamento -->
-                <div class="service-card bg-white rounded-lg p-8 card-shadow">
-                    <div class="icon-circle icon-pink">
-                        <i class="material-icons text-4xl text-pink-600">diamond</i>
+                <div class="service-card bg-white rounded-2xl shadow-lg overflow-hidden relative">
+                    <div class="absolute top-4 right-4 z-10">
+                        <span class="badge badge-secondary text-xs">
+                            <i class="fas fa-crown mr-1"></i>Premium
+                        </span>
                     </div>
-                    <h3 class="font-serif text-2xl font-semibold text-gray-800 mb-4 text-center">Proposta de Casamento
-                    </h3>
-                    <p class="text-gray-600 text-center mb-6">Momentos inesquecíveis para o grande "sim".</p>
-                    <img src="https://sfile.chatglm.cn/images-ppt/821fdbad95a2.jpg" alt="Proposta de casamento"
-                        class="rounded-lg w-full h-48 object-cover">
+                    <div class="relative h-48 md:h-64 overflow-hidden">
+                        <img src="https://picsum.photos/seed/marriage-proposal/600/400.jpg" alt="Proposta de Casamento" class="service-image w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                        <div class="absolute top-4 left-4">
+                            <div class="w-12 h-12 md:w-16 md:h-16 bg-pink-100 rounded-2xl flex items-center justify-center shadow-lg">
+                                <i class="fas fa-ring text-2xl md:text-3xl text-primary"></i>
+                            </div>
+                        </div>
+                        <div class="absolute bottom-4 left-4 right-4">
+                            <h3 class="text-white text-xl md:text-2xl font-bold font-playfair">Proposta de Casamento</h3>
+                        </div>
+                    </div>
+                    <div class="p-4 md:p-6">
+                        <p class="text-gray-600 mb-4 text-sm md:text-base">O momento mais especial da sua vida planejado nos mínimos detalhes para o "sim" perfeito.</p>
+                        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4 gap-2">
+                            <div class="flex items-center text-xs md:text-sm text-gray-500">
+                                <i class="fas fa-camera mr-2"></i>
+                                <span>Com fotógrafo</span>
+                            </div>
+                            <div class="flex items-center text-xs md:text-sm text-gray-500">
+                                <i class="fas fa-music mr-2"></i>
+                                <span>Música ao vivo</span>
+                            </div>
+                        </div>
+                        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+                            <div class="text-center sm:text-left">
+                                <span class="text-lg md:text-xl font-bold text-primary">A partir de</span>
+                                <div class="text-2xl md:text-3xl font-bold text-gray-800">50.000 Db</div>
+                            </div>
+                            <button onclick="openServiceDetailModal('proposta')" class="btn btn-primary w-full sm:w-auto">
+                                <i class="fas fa-arrow-right mr-2"></i>Saiba Mais
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Galeria de Emoções - Stories Instagram -->
-    <section class="py-16 px-4 bg-gray-50">
-        <div class="max-w-6xl mx-auto">
-            <h2 class="font-serif text-3xl md:text-4xl font-bold text-gray-800 text-center mb-6">Galeria de Emoções</h2>
-            <p class="text-lg md:text-xl text-gray-700 text-center mb-12 max-w-2xl mx-auto">Mais que presentes,
-                entregamos emoções.</p>
-
-            <div class="stories-container select-none">
-                <!-- Story 1 - Foto -->
-                <div class="story-item active" data-story="0" data-type="video">
-                    <div class="story-progress">
-                        <div class="story-progress-bar active"></div>
-                    </div>
-                    <div class="video-placeholder">
-                        <i class="material-icons text-3xl">play_arrow</i>
-                    </div>
-                    <video class="story-content" muted loop>
-                        <source src="assets/mimo1.mp4"
-                            type="video/mp4">
-                        Seu navegador não suporta o elemento de vídeo.
-                    </video>
-                    <!-- <div class="story-info">
-                        <h3 class="text-xl font-semibold mb-2">Surpresa de Aniversário</h3>
-                        <p>"A emoção de receber um presente inesperado no dia especial"</p>
-                    </div> -->
+    <!-- Depoimentos -->
+    <section id="depoimentos" class="py-16 md:py-20 px-4 bg-gray-50">
+        <div class="container">
+            <div class="text-center mb-12 md:mb-16">
+                <div class="inline-flex items-center bg-yellow-100 rounded-full px-3 md:px-4 py-2 mb-4 md:mb-6">
+                    <i class="fas fa-star text-yellow-500 mr-2"></i>
+                    <span class="text-yellow-600 font-medium text-sm">Depoimentos</span>
                 </div>
-
-                <!-- Story 2 - Vídeo -->
-                <div class="story-item" data-story="1" data-type="video">
-                    <div class="story-progress">
-                        <div class="story-progress-bar"></div>
+                <h2 class="font-playfair text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+                    O Que Nossos <span class="primary-gradient">Clientes Dizem</span>
+                </h2>
+                <div class="w-24 md:w-32 h-1 bg-primary mx-auto"></div>
+                <p class="text-gray-600 mt-4 max-w-2xl mx-auto text-sm md:text-base">
+                    Histórias reais de momentos que transformamos em memórias inesquecíveis
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+                <div class="testimonial-card">
+                    <div class="flex mb-4">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
                     </div>
-                    <div class="video-placeholder">
-                        <i class="material-icons text-3xl">play_arrow</i>
-                    </div>
-                    <video class="story-content" muted loop>
-                        <source src="assets/mimo2.mp4"
-                            type="video/mp4">
-                        Seu navegador não suporta o elemento de vídeo.
-                    </video>
-                    <!-- <div class="video-indicator">
-                        <i class="material-icons text-sm">videocam</i>
-                    </div> -->
-                   <!--  <div class="story-info">
-                        <h3 class="text-xl font-semibold mb-2">Reunião de Família</h3>
-                        <p>"Momentos que ficam para sempre na memória"</p>
-                    </div> -->
-                </div>
-
-                <!-- Story 3 - Foto -->
-                <div class="story-item" data-story="2" data-type="video">
-                    <div class="story-progress">
-                        <div class="story-progress-bar"></div>
-                    </div>
-                    <div class="video-placeholder">
-                        <i class="material-icons text-3xl">play_arrow</i>
-                    </div>
-                    <video class="story-content" muted loop>
-                        <source src="assets/mimo2.mp4"
-                            type="video/mp4">
-                        Seu navegador não suporta o elemento de vídeo.
-                    </video>
-                   <!--  <div class="story-info">
-                        <h3 class="text-xl font-semibold mb-2">Presente Especial</h3>
-                        <p>"A felicidade de receber algo pensado com carinho"</p>
-                    </div> -->
-                </div>
-
-                <!-- Story 4 - Vídeo -->
-                <div class="story-item" data-story="3" data-type="video">
-                    <div class="story-progress">
-                        <div class="story-progress-bar"></div>
-                    </div>
-                    <div class="video-placeholder">
-                        <i class="material-icons text-3xl">play_arrow</i>
-                    </div>
-                    <video class="story-content" muted loop>
-                        <source src="assets/mimo2.mp4"
-                            type="video/mp4">
-                        Seu navegador não suporta o elemento de vídeo.
-                    </video>
-                    <!-- <div class="video-indicator">
-                        <i class="material-icons text-sm">videocam</i>
-                    </div> -->
-                    <!-- <div class="story-info">
-                        <h3 class="text-xl font-semibold mb-2">Momento de Surpresa</h3>
-                        <p>"A expressão pura de felicidade ao ser surpreendida"</p>
-                    </div> -->
-                </div>
-
-                <!-- Story 5 - Foto -->
-                <div class="story-item" data-story="4" data-type="video">
-                    <div class="story-progress">
-                        <div class="story-progress-bar"></div>
-                    </div>
-                    <div class="video-placeholder">
-                        <i class="material-icons text-3xl">play_arrow</i>
-                    </div>
-                    <video class="story-content" muted loop>
-                        <source src="assets/mimo3.mp4"
-                            type="video/mp4">
-                        Seu navegador não suporta o elemento de vídeo.
-                    </video>
-                    <!-- <div class="story-info">
-                        <h3 class="text-xl font-semibold mb-2">Momento de Surpresa</h3>
-                        <p>"A expressão pura de felicidade ao ser surpreendida"</p>
-                    </div> -->
-                </div>
-
-                <!-- Navigation Areas -->
-                <div class="story-nav prev flex items-center justify-start p-2" onclick="changeStory(-1)">
-                    <div class="bg-black/20 roun p-0.5">
-                        <i class="material-icons text-white/30 hover:text-white/90 text-3xl md:text-4xl">chevron_left</i>
+                    <p class="text-gray-700 mb-6 italic leading-relaxed text-sm md:text-base">
+                        "A surpresa de aniversário que organizaram para minha esposa foi perfeita! Ela chorou de emoção. 
+                        Cada detalhe foi pensado com tanto carinho. Superou todas as minhas expectativas!"
+                    </p>
+                    <div class="flex items-center">
+                        <img src="https://picsum.photos/seed/client1/60/60.jpg" alt="Carlos Silva" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <div class="font-semibold text-gray-800">Carlos Silva</div>
+                            <div class="text-sm text-gray-500">Cliente de Aniversário</div>
+                        </div>
                     </div>
                 </div>
-                <div class="story-nav next flex items-center justify-end p-2" onclick="changeStory(1)">
-                    <div class=" bg-black/20 roun p-0.5">
-                        <i class="material-icons text-white/30 hover:text-white/90 text-3xl md:text-4xl">chevron_right</i>
+                
+                <div class="testimonial-card">
+                    <div class="flex mb-4">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </div>
+                    <p class="text-gray-700 mb-6 italic leading-relaxed text-sm md:text-base">
+                        "O jantar romântico que prepararam foi simplesmente mágico! A decoração, a comida, a música... 
+                        Tudo impecável. Foi uma noite que nunca vamos esquecer. Recomendo de olhos fechados!"
+                    </p>
+                    <div class="flex items-center">
+                        <img src="https://picsum.photos/seed/client2/60/60.jpg" alt="Maria Santos" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <div class="font-semibold text-gray-800">Maria Santos</div>
+                            <div class="text-sm text-gray-500">Cliente de Jantar</div>
+                        </div>
                     </div>
                 </div>
-
-                <!-- Pause Button -->
-                <div class="hidden story-pause" onclick="togglePlayPause()">
-                    <i class="material-icons" id="playPauseIcon">pause</i>
-                </div>
-
-                <!-- Mute Button -->
-                <div class="story-mute" onclick="toggleMute()">
-                    <i class="material-icons" id="muteIcon">volume_off</i>
+                
+                <div class="testimonial-card">
+                    <div class="flex mb-4">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </div>
+                    <p class="text-gray-700 mb-6 italic leading-relaxed text-sm md:text-base">
+                        "A proposta de casamento que organizaram foi além dos meus sonhos! Ela disse sim chorando de felicidade. 
+                        Obrigado Mimos STP por tornar este momento tão especial e inesquecível!"
+                    </p>
+                    <div class="flex items-center">
+                        <img src="https://picsum.photos/seed/client3/60/60.jpg" alt="João Mendes" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <div class="font-semibold text-gray-800">João Mendes</div>
+                            <div class="text-sm text-gray-500">Cliente de Proposta</div>
+                        </div>
+                    </div>
                 </div>
             </div>
-
+            
+            <div class="text-center mt-8 md:mt-12">
+                <div class="inline-flex items-center bg-white rounded-full shadow-lg px-4 md:px-6 py-3">
+                    <div class="flex text-yellow-400 mr-3">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <span class="font-semibold text-gray-800 mr-2 text-sm md:text-base">4.9</span>
+                    <span class="text-gray-600 text-sm md:text-base">(247 avaliações)</span>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Depoimentos 
-    <section class="py-16 px-4 bg-white">
-        <div class="max-w-6xl mx-auto">
-            <h2 class="font-serif text-4xl font-bold text-gray-800 text-center mb-12">O que dizem sobre nós</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="testimonial-card rounded-lg p-6 card-shadow">
-                    <p class="text-lg text-gray-700 italic mb-4">"Gostaria de agradecer pela atenção e desenvolvimento da surpresa! Com toda certeza lembraremos desse dia com muito carinho pelo resto das nossas vidas! É um dia de muita expectativa e 'ansiedade' onde nada pode dar 'errado'! Tudo estava lindo e foi como eu imaginei!"</p>
-                    <div class="flex items-center">
-                        <div class="testimonial-avatar">
-                            <i class="material-icons">person</i>
-                        </div>
-                        <div>
-                            <p class="font-semibold text-gray-800">Danubia Fracaro</p>
-                            <p class="text-sm text-gray-600">Decoração Romântica</p>
-                        </div>
+    <!-- FAQ -->
+    <section class="py-16 md:py-20 px-4 bg-white">
+        <div class="container max-w-4xl">
+            <div class="text-center mb-12 md:mb-16">
+                <div class="inline-flex items-center bg-blue-100 rounded-full px-3 md:px-4 py-2 mb-4 md:mb-6">
+                    <i class="fas fa-question-circle text-blue-600 mr-2"></i>
+                    <span class="text-blue-600 font-medium text-sm">Dúvidas Frequentes</span>
+                </div>
+                <h2 class="font-playfair text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+                    Tudo Que Você Precisa <span class="primary-gradient">Saber</span>
+                </h2>
+                <div class="w-24 md:w-32 h-1 bg-primary mx-auto"></div>
+            </div>
+            
+            <div class="space-y-4">
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <span class="text-sm md:text-base">Como funciona o processo de contratação?</span>
+                        <i class="fas fa-chevron-down faq-icon text-primary"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p class="text-gray-600 text-sm md:text-base">
+                            É muito simples! Você escolhe o serviço, informa local e data, personaliza os detalhes e finaliza o pedido. 
+                            Nossa equipe entra em contato para confirmar todos os detalhes e cuidar de tudo para você.
+                        </p>
                     </div>
                 </div>
                 
-                <div class="testimonial-card rounded-lg p-6 card-shadow">
-                    <p class="text-lg text-gray-700 italic mb-4">"Foi uma experiência incrível, meu marido ficou sem palavras, em meio à correria do dia a dia, uma empresa monta um momento romântico para o casal, você não precisa fazer nada. E tudo ficou pronto, uma surpresa inesquecível a sua espera."</p>
-                    <div class="flex items-center">
-                        <div class="testimonial-avatar">
-                            <i class="material-icons">person</i>
-                        </div>
-                        <div>
-                            <p class="font-semibold text-gray-800">Aline de S Costa</p>
-                            <p class="text-sm text-gray-600">Picnic</p>
-                        </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <span class="text-sm md:text-base">Com antecedência preciso fazer a reserva?</span>
+                        <i class="fas fa-chevron-down faq-icon text-primary"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p class="text-gray-600 text-sm md:text-base">
+                            Recomendamos no mínimo 48 horas de antecedência para serviços básicos e 1 semana para eventos especiais 
+                            como propostas de casamento. Isso nos garante tempo para preparar tudo com perfeição.
+                        </p>
                     </div>
                 </div>
                 
-                <div class="testimonial-card rounded-lg p-6 card-shadow">
-                    <p class="text-lg text-gray-700 italic mb-4">"Conheci através da internet e achei a ideia que a empresa propõem super diferente e inovadora! Eu que trabalhei em uma empresa de eventos achei genial! Desde o atendimento com carinho e todo cuidado da preparação, da pessoa que será surpreendida não descobrir, os detalhes tudo é muito bem pensado e cuidado!"</p>
-                    <div class="flex items-center">
-                        <div class="testimonial-avatar">
-                            <i class="material-icons">person</i>
-                        </div>
-                        <div>
-                            <p class="font-semibold text-gray-800">Gabrielle Calici</p>
-                            <p class="text-sm text-gray-600">Decoração Romântica</p>
-                        </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <span class="text-sm md:text-base">Vocês atendem em todas as ilhas?</span>
+                        <i class="fas fa-chevron-down faq-icon text-primary"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p class="text-gray-600 text-sm md:text-base">
+                            Atualmente atendemos em São Tomé e Príncipe. Para outras localidades, entre em contato para verificarmos 
+                            a possibilidade de atendimento especial.
+                        </p>
                     </div>
                 </div>
                 
-                <div class="testimonial-card rounded-lg p-6 card-shadow">
-                    <p class="text-lg text-gray-700 italic mb-4">"Adorei o serviço prestado por vocês. Foi inesquecível para ambos, e recebemos todo o apoio que precisávamos, até porque não somos do Brasil e nem sempre é fácil coordenar este tipo de eventos à distância."</p>
-                    <div class="flex items-center">
-                        <div class="testimonial-avatar">
-                            <i class="material-icons">person</i>
-                        </div>
-                        <div>
-                            <p class="font-semibold text-gray-800">Nuno Pereira</p>
-                            <p class="text-sm text-gray-600">Jantar Romântico</p>
-                        </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <span class="text-sm md:text-base">Posso personalizar o serviço?</span>
+                        <i class="fas fa-chevron-down faq-icon text-primary"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p class="text-gray-600 text-sm md:text-base">
+                            Sim! Todos os nossos serviços são totalmente personalizáveis. Desde cores e temas até músicas e mensagens 
+                            especiais. Nossa equipe adora criar experiências únicas para cada cliente.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <span class="text-sm md:text-base">Qual forma de pagamento aceitam?</span>
+                        <i class="fas fa-chevron-down faq-icon text-primary"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p class="text-gray-600 text-sm md:text-base">
+                            Aceitamos transferência bancária, MPESA, dinheiro e cartão (para valores acima de determinado valor). 
+                            O pagamento é dividido: 50% na reserva e 50% na entrega.
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
-    </section> -->
+    </section>
 
-    <!-- Newsletter
-    <section class="py-16 px-4 bg-gray-50">
-        <div class="max-w-4xl mx-auto text-center">
-            <h2 class="font-serif text-4xl font-bold text-gray-800 mb-6">Quer receber dicas e novidades?</h2>
-            <p class="text-xl text-gray-700 mb-8">Assine nossa newsletter e fique por dentro das melhores surpresas!</p>
-            <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
-                <input type="email" placeholder="Seu melhor e-mail" class="newsletter-input">
-                <button class="newsletter-button">
-                    <i class="material-icons align-middle mr-2">email</i>
-                    Assinar
-                </button>
-            </div>
-        </div>
-    </section> -->
-
-    <!-- Chamada para Ação Final -->
-    <section class="py-16 px-4 gold-gradient relative overflow-hidden grid-pattern">
+    <!-- Contato -->
+    <section id="contato" class="py-16 md:py-20 px-4 secondary-bg relative overflow-hidden">
         <div class="absolute inset-0 bg-gradient-to-br from-yellow-400/20 via-white/30 to-pink-100/40"></div>
-        <div class="max-w-4xl mx-auto text-center relative z-10 px-4">
-            <h2 class="font-serif text-3xl md:text-4xl font-bold text-gray-800 mb-6">Precisa do nosso serviço?</h2>
-            <p class="text-lg md:text-xl text-gray-700 mb-8">Envie uma mensagem agora.</p>
-            <div class="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-8 mb-8">
-                <p class="text-lg text-gray-700 flex items-center">
-                    <i class="material-icons align-middle mr-2">phone</i>
-                    +239 9988158
-                </p>
-                <p class="text-lg text-gray-700 flex items-center">
-                    <i class="material-icons align-middle mr-2">phone</i>
-                    +239 9966764
+        <div class="container relative z-10">
+            <div class="text-center mb-12 md:mb-16">
+                <div class="inline-flex items-center bg-white/80 backdrop-blur-sm rounded-full px-3 md:px-4 py-2 mb-4 md:mb-6">
+                    <i class="fas fa-envelope text-yellow-600 mr-2"></i>
+                    <span class="text-yellow-600 font-medium text-sm">Entre em Contato</span>
+                </div>
+                <h2 class="font-playfair text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+                    Vamos Criar <span class="text-yellow-600">Juntos</span> o Momento Perfeito
+                </h2>
+                <div class="w-24 md:w-32 h-1 bg-yellow-500 mx-auto"></div>
+                <p class="text-gray-700 mt-4 max-w-2xl mx-auto text-sm md:text-base">
+                    Nossa equipe está pronta para transformar sua ideia em uma surpresa inesquecível
                 </p>
             </div>
-            <a href="https://wa.me/2399988158" target="_blank"
-                class="whatsapp-green text-white font-semibold py-4 px-8 rounded-full inline-flex items-center text-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-                <i class="material-icons mr-2">chat</i>
-                Fale conosco no WhatsApp
-            </a>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
+                <div class="bg-white/90 backdrop-blur-sm rounded-2xl p-6 md:p-8 shadow-xl">
+                    <h3 class="text-xl md:text-2xl font-bold text-gray-800 mb-6">Informações de Contato</h3>
+                    <div class="space-y-4 md:space-y-6">
+                        <div class="flex items-start space-x-4">
+                            <div class="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-phone text-green-600 text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-800 mb-1 text-sm md:text-base">Telefone</h4>
+                                <p class="text-gray-600 text-sm md:text-base">+239 9988158</p>
+                                <p class="text-gray-600 text-sm md:text-base">+239 9966764</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i class="fab fa-whatsapp text-blue-600 text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-800 mb-1 text-sm md:text-base">WhatsApp</h4>
+                                <p class="text-gray-600 text-sm md:text-base">Resposta rápida em minutos</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-envelope text-purple-600 text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-800 mb-1 text-sm md:text-base">Email</h4>
+                                <p class="text-gray-600 text-sm md:text-base">contato@mimosstp.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="w-10 h-10 bg-pink-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-map-marker-alt text-pink-600 text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-800 mb-1 text-sm md:text-base">Localização</h4>
+                                <p class="text-gray-600 text-sm md:text-base">São Tomé, São Tomé e Príncipe</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="w-10 h-10 bg-yellow-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-clock text-yellow-600 text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-800 mb-1 text-sm md:text-base">Horário</h4>
+                                <p class="text-gray-600 text-sm md:text-base">Seg-Sex: 8h-20h</p>
+                                <p class="text-gray-600 text-sm md:text-base">Sáb-Dom: 9h-18h</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex flex-col sm:flex-row gap-3 mt-6 md:mt-8">
+                        <a href="https://wa.me/2399988158" target="_blank" class="btn btn-primary flex-1">
+                            <i class="fab fa-whatsapp mr-2"></i>WhatsApp
+                        </a>
+                        <a href="tel:+2399988158" class="btn btn-outline flex-1">
+                            <i class="fas fa-phone mr-2"></i>Ligar
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="bg-white/90 backdrop-blur-sm rounded-2xl p-6 md:p-8 shadow-xl">
+                    <h3 class="text-xl md:text-2xl font-bold text-gray-800 mb-6">Solicitar Orçamento</h3>
+                    <form id="contactForm" class="space-y-4">
+                        <div>
+                            <label class="block text-gray-700 font-medium mb-2 text-sm">Seu Nome</label>
+                            <input type="text" id="contactName" required class="form-input" placeholder="Digite seu nome completo">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-gray-700 font-medium mb-2 text-sm">WhatsApp</label>
+                            <input type="tel" id="contactPhone" required class="form-input" placeholder="+239 XXX XXX XXX">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-gray-700 font-medium mb-2 text-sm">Email</label>
+                            <input type="email" id="contactEmail" required class="form-input" placeholder="seu@email.com">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-gray-700 font-medium mb-2 text-sm">Tipo de Serviço</label>
+                            <select id="contactService" required class="form-input">
+                                <option value="">Selecione um serviço</option>
+                                <option value="aniversario">Aniversário Especial</option>
+                                <option value="decoracao">Decoração Romântica</option>
+                                <option value="picnic">Picnic Exclusivo</option>
+                                <option value="jantar">Jantar Romântico</option>
+                                <option value="caixa">Caixa de Surpresa</option>
+                                <option value="proposta">Proposta de Casamento</option>
+                                <option value="outro">Outro</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-gray-700 font-medium mb-2 text-sm">Data Desejada</label>
+                            <input type="date" id="contactDate" required class="form-input">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-gray-700 font-medium mb-2 text-sm">Mensagem</label>
+                            <textarea id="contactMessage" rows="4" class="form-input" placeholder="Conte-nos mais sobre sua surpresa ideal..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary w-full text-lg py-3">
+                            <i class="fas fa-paper-plane mr-2"></i>
+                            Enviar Solicitação
+                        </button>
+                    </form>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Novo Footer Profissional -->
-    <footer class="footer-bg text-white pt-16 pb-8">
-        <div class="max-w-6xl mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-12 md:pt-16 pb-8">
+        <div class="container">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 mb-8 md:mb-12">
                 <!-- Sobre Nós -->
                 <div>
-                    <h3 class="font-serif text-2xl font-bold mb-4 text-yellow-400">Levamos a Felicidade</h3>
-                    <p class="text-gray-300 mb-4">
-                        Transformamos momentos especiais em memórias inesquecíveis com surpresas personalizadas e
-                        entregas emocionantes.
+                    <div class="flex items-center space-x-3 mb-4 md:mb-6">
+                        <div class="w-10 h-10 md:w-12 md:h-12 rounded-full primary-bg-gradient flex items-center justify-center">
+                            <i class="fas fa-heart text-white text-lg md:text-xl"></i>
+                        </div>
+                        <div>
+                            <span class="text-xl md:text-2xl font-bold text-pink-400 font-playfair">Mimos STP</span>
+                            <p class="text-xs text-gray-400 hidden md:block">Especialistas em Momentos</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 mb-4 md:mb-6 leading-relaxed text-sm md:text-base">
+                        Transformamos momentos especiais em memórias inesquecíveis com surpresas personalizadas e entregas emocionantes em São Tomé e Príncipe.
                     </p>
-                    <div class="flex space-x-4">
-                        <a href="#" class="social-icon text-gray-400 hover:text-yellow-400">
-                            <i class="material-icons">facebook</i>
+                    <div class="flex space-x-3 md:space-x-4">
+                        <a href="https://facebook.com/mimosstp" target="_blank" class="w-8 h-8 md:w-10 md:h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-primary transition-colors">
+                            <i class="fab fa-facebook-f text-sm md:text-base"></i>
                         </a>
-                        <a href="#" class="social-icon text-gray-400 hover:text-yellow-400">
-                            <i class="material-icons">alternate_email</i>
+                        <a href="https://instagram.com/mimosstp" target="_blank" class="w-8 h-8 md:w-10 md:h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-primary transition-colors">
+                            <i class="fab fa-instagram text-sm md:text-base"></i>
                         </a>
-                        <a href="#" class="social-icon text-gray-400 hover:text-yellow-400">
-                            <i class="material-icons">camera_alt</i>
+                        <a href="https://wa.me/2399988158" target="_blank" class="w-8 h-8 md:w-10 md:h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-green-500 transition-colors">
+                            <i class="fab fa-whatsapp text-sm md:text-base"></i>
                         </a>
                     </div>
                 </div>
 
                 <!-- Links Rápidos -->
                 <div>
-                    <h4 class="text-lg font-semibold mb-4 text-yellow-400">Links Rápidos</h4>
-                    <ul class="space-y-2">
-                        <li><a href="#" class="footer-link text-gray-300 hover:text-yellow-400">Sobre Nós</a></li>
-                        <li><a href="#" class="footer-link text-gray-300 hover:text-yellow-400">Nossos Serviços</a></li>
-                        <li><a href="#" class="footer-link text-gray-300 hover:text-yellow-400">Galeria de Emoções</a>
-                        </li>
-                        <li><a href="#" class="footer-link text-gray-300 hover:text-yellow-400">Depoimentos</a></li>
-                        <li><a href="#" class="footer-link text-gray-300 hover:text-yellow-400">Como Funciona</a></li>
+                    <h4 class="text-lg font-semibold mb-4 md:mb-6 text-pink-400">Links Rápidos</h4>
+                    <ul class="space-y-2 md:space-y-3">
+                        <li><a href="#sobre" class="text-gray-300 hover:text-pink-400 transition-colors text-sm md:text-base">Sobre Nós</a></li>
+                        <li><a href="#servicos" class="text-gray-300 hover:text-pink-400 transition-colors text-sm md:text-base">Nossos Serviços</a></li>
+                        <li><a href="#processo" class="text-gray-300 hover:text-pink-400 transition-colors text-sm md:text-base">Como Funciona</a></li>
+                        <li><a href="#depoimentos" class="text-gray-300 hover:text-pink-400 transition-colors text-sm md:text-base">Depoimentos</a></li>
+                        <li><a href="#contato" class="text-gray-300 hover:text-pink-400 transition-colors text-sm md:text-base">Contato</a></li>
                     </ul>
                 </div>
 
                 <!-- Serviços -->
                 <div>
-                    <h4 class="text-lg font-semibold mb-4 text-yellow-400">Nossos Serviços</h4>
-                    <ul class="space-y-2">
-                        <li><a href="#" class="footer-link text-gray-300 hover:text-yellow-400">Aniversários
-                                Especiais</a></li>
-                        <li><a href="#" class="footer-link text-gray-300 hover:text-yellow-400">Decoração Romântica</a>
-                        </li>
-                        <li><a href="#" class="footer-link text-gray-300 hover:text-yellow-400">Picnic</a></li>
-                        <li><a href="#" class="footer-link text-gray-300 hover:text-yellow-400">Jantar Romântico</a>
-                        </li>
-                        <li><a href="#" class="footer-link text-gray-300 hover:text-yellow-400">Proposta de
-                                Casamento</a></li>
+                    <h4 class="text-lg font-semibold mb-4 md:mb-6 text-pink-400">Nossos Serviços</h4>
+                    <ul class="space-y-2 md:space-y-3">
+                        <li><a href="#" class="text-gray-300 hover:text-pink-400 transition-colors text-sm md:text-base">Aniversários Especiais</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-pink-400 transition-colors text-sm md:text-base">Decoração Romântica</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-pink-400 transition-colors text-sm md:text-base">Picnic Exclusivo</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-pink-400 transition-colors text-sm md:text-base">Jantar Romântico</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-pink-400 transition-colors text-sm md:text-base">Proposta de Casamento</a></li>
                     </ul>
                 </div>
 
-                <!-- Contato -->
+                <!-- Newsletter -->
                 <div>
-                    <h4 class="text-lg font-semibold mb-4 text-yellow-400">Contato</h4>
-                    <div class="space-y-3">
-                        <div class="flex items-center">
-                            <i class="material-icons mr-3 text-yellow-400">phone</i>
-                            <span class="text-gray-300">+239 9988158</span>
-                        </div>
-                        <div class="flex items-center">
-                            <i class="material-icons mr-3 text-yellow-400">phone</i>
-                            <span class="text-gray-300">+239 9966764</span>
-                        </div>
-                        <div class="flex items-center">
-                            <i class="material-icons mr-3 text-yellow-400">email</i>
-                            <span class="text-gray-300">contato@levamosafelicidade.com</span>
-                        </div>
-                        <div class="flex items-start">
-                            <i class="material-icons mr-3 text-yellow-400 mt-1">location_on</i>
-                            <span class="text-gray-300">São Tomé, São Tomé e Príncipe</span>
-                        </div>
-                    </div>
-
-                    <div class="mt-6">
-                        <a href="https://wa.me/2399988158" target="_blank"
-                            class="whatsapp-green text-white font-semibold py-3 px-6 rounded-full inline-flex items-center shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-                            <i class="material-icons mr-2">chat</i>
-                            Fale Conosco
-                        </a>
-                    </div>
+                    <h4 class="text-lg font-semibold mb-4 md:mb-6 text-pink-400">Receba Ofertas</h4>
+                    <p class="text-gray-300 mb-4 text-sm md:text-base">Cadastre-se e receba promoções exclusivas</p>
+                    <form onsubmit="handleNewsletter(event)" class="space-y-3">
+                        <input type="email" placeholder="Seu email" required class="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:border-primary text-white text-sm">
+                        <button type="submit" class="w-full btn btn-primary text-sm">Cadastrar</button>
+                    </form>
                 </div>
             </div>
 
             <!-- Divider -->
-            <div class="border-t border-gray-700 mb-8"></div>
+            <div class="border-t border-gray-700 mb-6 md:mb-8"></div>
 
             <!-- Bottom Footer -->
-            <div class="flex flex-col md:flex-row justify-between items-center">
+            <div class="flex flex-col md:flex-row justify-between items-center text-center md:text-left">
                 <div class="mb-4 md:mb-0">
-                    <p class="text-gray-400">© 2025 Levamos a Felicidade até você. Todos os direitos reservados.</p>
+                    <p class="text-gray-400 text-sm md:text-base">© 2025 Mimos STP - Todos os direitos reservados.</p>
+                    <p class="text-gray-500 text-xs md:text-sm mt-1">CNPJ: 12.345.678/0001-90</p>
                 </div>
-                <div class="flex space-x-6">
-                    <a href="#" class="footer-link text-gray-400 hover:text-yellow-400">Política de Privacidade</a>
-                    <a href="#" class="footer-link text-gray-400 hover:text-yellow-400">Termos de Uso</a>
-                    <a href="#" class="footer-link text-gray-400 hover:text-yellow-400">Trabalhe Conosco</a>
+                <div class="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-pink-400 transition-colors text-xs md:text-sm">Política de Privacidade</a>
+                    <a href="#" class="text-gray-400 hover:text-pink-400 transition-colors text-xs md:text-sm">Termos de Uso</a>
+                    <a href="#" class="text-gray-400 hover:text-pink-400 transition-colors text-xs md:text-sm">LGPD</a>
                 </div>
             </div>
         </div>
     </footer>
 
+    <!-- Service Detail Modal -->
+    <div id="serviceDetailModal" class="fixed inset-0 bg-black/80 z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl max-w-3xl w-full max-h-[90vh] overflow-y-auto" id="serviceDetailContent">
+            <!-- Content will be injected by JavaScript -->
+            <div class="p-6 md:p-8">
+                <div class="flex justify-between items-center mb-6">
+                    <h3 class="text-xl md:text-2xl font-bold text-primary font-playfair" id="detailModalTitle">Detalhes do Serviço</h3>
+                    <button onclick="closeServiceDetailModal()" class="text-gray-400 hover:text-gray-600">
+                        <i class="fas fa-times text-2xl"></i>
+                    </button>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <img id="detailModalImage" src="https://picsum.photos/seed/placeholder/600/400" alt="Detalhe do serviço" class="rounded-lg shadow-md w-full h-64 object-cover">
+                    </div>
+                    <div>
+                        <p class="text-gray-600 mb-4 text-sm md:text-base" id="detailModalDescription">Descrição do serviço...</p>
+                        <h4 class="font-semibold text-gray-800 mb-3">Itens Inclusos:</h4>
+                        <ul id="detailModalItems" class="space-y-2 text-sm text-gray-700 list-disc list-inside">
+                            <li><i class="fas fa-check-circle text-primary mr-2"></i>Item 1</li>
+                            <li><i class="fas fa-check-circle text-primary mr-2"></i>Item 2</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="mt-8 border-t pt-6 flex flex-col sm:flex-row gap-3">
+                     <button onclick="openQuoteModalFromDetail()" class="flex-1 btn btn-primary">
+                        <i class="fab fa-whatsapp mr-2"></i>
+                        Solicitar Orçamento
+                    </button>
+                    <button onclick="closeServiceDetailModal()" class="flex-1 btn btn-outline">
+                        Fechar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Service Modal -->
+    <div id="serviceModal" class="fixed inset-0 bg-black/80 z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+            <div class="p-6 md:p-8">
+                <div class="flex justify-between items-center mb-6">
+                    <h3 class="text-xl md:text-2xl font-bold text-primary">Solicitar Informações</h3>
+                    <button onclick="closeServiceModal()" class="text-gray-400 hover:text-gray-600">
+                        <i class="fas fa-times text-2xl"></i>
+                    </button>
+                </div>
+                
+                <form id="serviceForm" class="space-y-4">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-gray-700 font-medium mb-2 text-sm">Nome Completo *</label>
+                            <input type="text" id="formName" required class="form-input" placeholder="Seu nome completo">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 font-medium mb-2 text-sm">WhatsApp *</label>
+                            <input type="tel" id="formPhone" required class="form-input" placeholder="+239 XXX XXX XXX">
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-gray-700 font-medium mb-2 text-sm">Email *</label>
+                            <input type="email" id="formEmail" required class="form-input" placeholder="seu@email.com">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 font-medium mb-2 text-sm">Data Desejada *</label>
+                            <input type="date" id="formDate" required class="form-input">
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-gray-700 font-medium mb-2 text-sm">Tipo de Serviço *</label>
+                        <select id="formService" required class="form-input">
+                            <option value="">Selecione um serviço</option>
+                            <option value="aniversario">Aniversário Especial</option>
+                            <option value="decoracao">Decoração Romântica</option>
+                            <option value="picnic">Picnic Exclusivo</option>
+                            <option value="jantar">Jantar Romântico</option>
+                            <option value="caixa">Caixa de Surpresa</option>
+                            <option value="proposta">Proposta de Casamento</option>
+                            <option value="outro">Outro</option>
+                        </select>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-gray-700 font-medium mb-2 text-sm">Orçamento Aproximado</label>
+                        <select id="formBudget" class="form-input">
+                            <option value="">Selecione uma faixa</option>
+                            <option value="10k-25k">10.000 - 25.000 Db</option>
+                            <option value="25k-50k">25.000 - 50.000 Db</option>
+                            <option value="50k+">Acima de 50.000 Db</option>
+                        </select>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-gray-700 font-medium mb-2 text-sm">Descreva sua Surpresa Ideal</label>
+                        <textarea id="formMessage" rows="4" class="form-input" placeholder="Conte-nos detalhes sobre como você imagina este momento especial..."></textarea>
+                    </div>
+                    
+                    <div class="flex items-center space-x-2">
+                        <input type="checkbox" id="formTerms" required class="w-4 h-4 text-primary">
+                        <label for="formTerms" class="text-sm text-gray-600">
+                            Li e concordo com os <a href="#" class="text-primary hover:underline">termos de uso</a> e <a href="#" class="text-primary hover:underline">política de privacidade</a>
+                        </label>
+                    </div>
+                    
+                    <div class="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4">
+                        <button type="submit" class="flex-1 btn btn-primary">
+                            <i class="fab fa-whatsapp mr-2"></i>
+                            Enviar via WhatsApp
+                        </button>
+                        <button type="button" onclick="closeServiceModal()" class="flex-1 btn btn-outline">
+                            Cancelar
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Container -->
+    <div id="toast-container" class="fixed top-20 right-4 z-50 space-y-3"></div>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/2399988158?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20as%20surpresas." target="_blank" class="fixed bottom-6 right-6 md:bottom-8 md:right-8 w-14 h-14 bg-green-500 text-white rounded-full shadow-lg hover:bg-green-600 transition-all duration-300 transform hover:scale-110 z-30 flex items-center justify-center pulse">
+        <i class="fab fa-whatsapp text-xl md:text-2xl"></i>
+    </a>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="fixed bottom-6 left-6 md:bottom-8 md:left-8 w-12 h-12 bg-primary text-white rounded-full shadow-lg hover:bg-primary-dark transition-all duration-300 transform hover:scale-110 z-30 hidden flex items-center justify-center">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
     <script>
-        // Stories functionality
-        let currentStory = 0;
-        const stories = document.querySelectorAll('.story-item');
-        const progressBars = document.querySelectorAll('.story-progress-bar');
-        let storyInterval;
-        let isPaused = false;
-        const videoElements = [];
-        const videoPlaceholders = [];
-
-        // Single Mute Button
-        const muteButton = document.querySelector('.story-mute');
-        const muteIcon = document.getElementById('muteIcon');
-
-        // Initialize video elements
-        function initVideos() {
-            stories.forEach((story, index) => {
-                const video = story.querySelector('video');
-                if (video) {
-                    videoElements[index] = video;
-                    videoPlaceholders[index] = story.querySelector('.video-placeholder');
-
-                    // Play video when placeholder is clicked
-                    if (videoPlaceholders[index]) {
-                        videoPlaceholders[index].addEventListener('click', () => {
-                            video.play();
-                        });
-                    }
-
-                    video.addEventListener('ended', () => {
-                        if (!isPaused) {
-                            changeStory(1);
-                        }
-                    });
-                    // Adiciona a funcionalidade de tocar/pausar ao clicar no vídeo
-                    video.addEventListener('click', () => {
-                        togglePlayPause();
-                    });
-
-                    // Show/hide play placeholder
-                    video.addEventListener('play', () => {
-                        if (videoPlaceholders[index]) videoPlaceholders[index].style.display = 'none';
-                    });
-                    video.addEventListener('pause', () => {
-                        if (videoPlaceholders[index]) videoPlaceholders[index].style.display = 'flex';
-                    });
-
-                } else {
-                    videoElements[index] = null;
-                }
-            });
-        }
-
-        function showStory(index) {
-            // Pause current video if playing
-            if (videoElements[currentStory]) {
-                videoElements[currentStory].pause();
-                videoElements[currentStory].muted = true; // Always re-mute on story change
-            }
-
-            // Hide all stories
-            stories.forEach(story => story.classList.remove('active'));
-            progressBars.forEach(bar => bar.classList.remove('active'));
-
-            // Reset all progress bars
-            progressBars.forEach(bar => {
-                bar.style.transition = 'none';
-                bar.style.width = '0';
-            });
-
-            // Show selected story
-            stories[index].classList.add('active');
-
-            // Start progress bar animation
+        // Loading screen
+        window.addEventListener('load', () => {
             setTimeout(() => {
-                progressBars[index].style.transition = 'width 5s linear';
-                progressBars[index].classList.add('active');
-            }, 100);
+                const loadingScreen = document.getElementById('loading-screen');
+                loadingScreen.style.opacity = '0';
+                setTimeout(() => loadingScreen.style.display = 'none', 500);
+            }, 2000);
+        });
 
-            currentStory = index;
+        // Mobile menu functionality
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
+        const closeMobileMenu = document.getElementById('closeMobileMenu');
 
-            const storyType = stories[index].dataset.type;
+        function openMobileMenu() {
+            mobileMenu.classList.add('active');
+            mobileMenuOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
 
-            // Show/hide mute button
-            if (storyType === 'video') {
-                muteButton.style.display = 'flex';
-                updateMuteIcon();
+        function closeMobileMenuFunc() {
+            mobileMenu.classList.remove('active');
+            mobileMenuOverlay.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        mobileMenuBtn?.addEventListener('click', openMobileMenu);
+        closeMobileMenu?.addEventListener('click', closeMobileMenuFunc);
+        mobileMenuOverlay?.addEventListener('click', closeMobileMenuFunc);
+
+        // Close mobile menu when clicking on links
+        const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                closeMobileMenuFunc();
+            });
+        });
+
+        // Toast notification system
+        function showToast(message, type = 'success', duration = 3000) {
+            const container = document.getElementById('toast-container');
+            const toast = document.createElement('div');
+            toast.className = `px-4 md:px-6 py-3 md:py-4 rounded-lg shadow-xl transform transition-all duration-500 ${
+                type === 'success' ? 'bg-green-500' : type === 'error' ? 'bg-red-500' : 'bg-blue-500'
+            } text-white min-w-[250px] md:min-w-[300px]`;
+            
+            const icon = type === 'success' ? 'fa-check-circle' : type === 'error' ? 'fa-exclamation-circle' : 'fa-info-circle';
+            
+            toast.innerHTML = `
+                <div class="flex items-center">
+                    <i class="fas ${icon} mr-3 text-lg md:text-xl"></i>
+                    <div>
+                        <p class="font-medium text-sm md:text-base">${message}</p>
+                        <p class="text-xs md:text-sm opacity-90">Redirecionando...</p>
+                    </div>
+                </div>
+            `;
+            
+            container.appendChild(toast);
+            
+            // Animate in
+            setTimeout(() => {
+                toast.style.transform = 'translateX(0)';
+            }, 10);
+            
+            // Remove after duration
+            setTimeout(() => {
+                toast.style.transform = 'translateX(100%)';
+                setTimeout(() => toast.remove(), 500);
+            }, duration);
+        }
+
+        // Service Detail Modal
+        const serviceDetails = {
+            aniversario: {
+                title: 'Aniversários Especiais',
+                description: 'Celebrações inesquecíveis com decorações temáticas, bolos personalizados e muitas surpresas para tornar o dia ainda mais especial.',
+                image: 'https://picsum.photos/seed/birthday-surprise/600/400.jpg',
+                items: ['Decoração temática completa', 'Bolo de aniversário personalizado', 'Balões e arranjos florais', 'Mesa de doces e salgados', 'Música ambiente', 'Caixa de presente surpresa']
+            },
+            decoracao: {
+                title: 'Decoração Romântica',
+                description: 'Transformamos qualquer ambiente num cenário de filme com flores, velas, pétalas e uma iluminação que cria a atmosfera perfeita para o amor.',
+                image: 'https://picsum.photos/seed/romantic-decoration/600/400.jpg',
+                items: ['Decoração com pétalas de rosas', 'Velas aromáticas', 'Balões em formato de coração', 'Letreiro "Te Amo" ou personalizado', 'Música romântica', 'Vinho ou espumante']
+            },
+            picnic: {
+                title: 'Picnic Exclusivo',
+                description: 'Desfrute de momentos ao ar livre com cestas gourmet, mantas decoradas e uma vista deslumbrante. Nós cuidamos de tudo.',
+                image: 'https://picsum.photos/seed/picnic-romantic/600/400.jpg',
+                items: ['Cesta de vime decorada', 'Manta e almofadas confortáveis', 'Seleção de queijos e frios', 'Frutas da estação', 'Pães artesanais e torradas', 'Suco natural e água aromatizada']
+            },
+            jantar: {
+                title: 'Jantar Romântico',
+                description: 'Uma experiência gastronômica exclusiva com menu degustação, vinhos selecionados e um ambiente totalmente intimista e privado.',
+                image: 'https://picsum.photos/seed/romantic-dinner/600/400.jpg',
+                items: ['Mesa posta com decoração especial', 'Menu de 3 pratos (entrada, principal, sobremesa)', 'Vinho para harmonização', 'Música ambiente selecionada', 'Serviço de garçom exclusivo']
+            },
+            caixa: {
+                title: 'Caixa de Surpresa',
+                description: 'Presentes exclusivos embalados com muito carinho e entregues de forma surpreendente para emocionar quem você ama.',
+                image: 'https://picsum.photos/seed/gift-box/600/400.jpg',
+                items: ['Caixa personalizada com nome', 'Balão metalizado com gás hélio', 'Caixa de bombons finos', 'Urso de pelúcia ou item similar', 'Cartão com mensagem personalizada']
+            },
+            proposta: {
+                title: 'Proposta de Casamento',
+                description: 'Planejamos o momento mais especial da sua vida nos mínimos detalhes para garantir que o "sim" seja perfeito e inesquecível.',
+                image: 'https://picsum.photos/seed/marriage-proposal/600/400.jpg',
+                items: ['Cenário cinematográfico (praia, mirante, etc.)', 'Letreiro "Casa Comigo?" iluminado', 'Fotógrafo profissional para registrar o momento', 'Música ao vivo (violinista ou saxofonista)', 'Champanhe para o brinde', 'Buquê de flores']
+            }
+        };
+
+        let currentServiceId = null;
+
+        function openServiceDetailModal(serviceId) {
+            currentServiceId = serviceId;
+            const service = serviceDetails[serviceId];
+            if (!service) return;
+
+            document.getElementById('detailModalTitle').textContent = service.title;
+            document.getElementById('detailModalDescription').textContent = service.description;
+            document.getElementById('detailModalImage').src = service.image;
+            document.getElementById('detailModalImage').alt = service.title;
+
+            const itemsList = document.getElementById('detailModalItems');
+            itemsList.innerHTML = service.items.map(item => `<li><i class="fas fa-check-circle text-primary mr-2"></i>${item}</li>`).join('');
+
+            document.getElementById('serviceDetailModal').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeServiceDetailModal() {
+            document.getElementById('serviceDetailModal').classList.add('hidden');
+            document.body.style.overflow = 'auto';
+            currentServiceId = null;
+        }
+
+        function openQuoteModalFromDetail() {
+            closeServiceDetailModal();
+            openServiceModal(currentServiceId);
+        }
+
+        // Service modal
+        let selectedService = '';
+        
+        function openServiceModal(service) {
+            selectedService = service;
+            document.getElementById('serviceModal').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+            
+            // Pre-fill service if provided
+            if (service) {
+                const serviceSelect = document.getElementById('formService');
+                serviceSelect.value = service;
+            }
+        }
+
+        function closeServiceModal() {
+            document.getElementById('serviceModal').classList.add('hidden');
+            document.body.style.overflow = 'auto';
+            document.getElementById('serviceForm').reset();
+        }
+
+        // Enhanced form submission to WhatsApp
+        document.getElementById('serviceForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('formName').value;
+            const phone = document.getElementById('formPhone').value;
+            const email = document.getElementById('formEmail').value;
+            const date = document.getElementById('formDate').value;
+            const service = document.getElementById('formService').value;
+            const budget = document.getElementById('formBudget').value;
+            const message = document.getElementById('formMessage').value;
+            
+            // Service name mapping
+            const serviceNames = {
+                'aniversario': 'Aniversário Especial',
+                'decoracao': 'Decoração Romântica',
+                'picnic': 'Picnic Exclusivo',
+                'jantar': 'Jantar Romântico',
+                'caixa': 'Caixa de Surpresa',
+                'proposta': 'Proposta de Casamento',
+                'outro': 'Outro Serviço'
+            };
+            
+            // Create professional WhatsApp message
+            const whatsappMessage = `*🎉 SOLICITAÇÃO DE ORÇAMENTO - MIMOS STP* 🎉\n\n` +
+                `*📋 DADOS DO CLIENTE*\n` +
+                `*Nome:* ${name}\n` +
+                `*WhatsApp:* ${phone}\n` +
+                `*Email:* ${email}\n\n` +
+                `*🎁 DETALHES DO SERVIÇO*\n` +
+                `*Serviço:* ${serviceNames[service] || service}\n` +
+                `*Data Desejada:* ${date}\n` +
+                `*Faixa de Orçamento:* ${budget || 'Não informado'}\n\n` +
+                `*💬 Mensagem Adicional:*\n${message || 'Não informado'}\n\n` +
+                `*📅 Data da Solicitação:* ${new Date().toLocaleDateString('pt-ST')}\n` +
+                `*⏰ Hora:* ${new Date().toLocaleTimeString('pt-ST')}\n\n` +
+                `*Por favor, entre em contato para confirmar os detalhes e finalizar o orçamento!*`;
+            
+            // Encode message for URL
+            const encodedMessage = encodeURIComponent(whatsappMessage);
+            
+            // Show loading state
+            showToast('Preparando sua solicitação...', 'info');
+            
+            // Open WhatsApp with the message after a short delay
+            setTimeout(() => {
+                const whatsappUrl = `https://wa.me/2399988158?text=${encodedMessage}`;
+                window.open(whatsappUrl, '_blank');
+                closeServiceModal();
+                showToast('Solicitação enviada com sucesso!', 'success');
+            }, 1500);
+        });
+
+        // Contact form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('contactName').value;
+            const phone = document.getElementById('contactPhone').value;
+            const email = document.getElementById('contactEmail').value;
+            const service = document.getElementById('contactService').value;
+            const date = document.getElementById('contactDate').value;
+            const message = document.getElementById('contactMessage').value;
+            
+            // Service name mapping
+            const serviceNames = {
+                'aniversario': 'Aniversário Especial',
+                'decoracao': 'Decoração Romântica',
+                'picnic': 'Picnic Exclusivo',
+                'jantar': 'Jantar Romântico',
+                'caixa': 'Caixa de Surpresa',
+                'proposta': 'Proposta de Casamento',
+                'outro': 'Outro Serviço'
+            };
+            
+            const whatsappMessage = `NOVA SOLICITAÇÃO DE CONTATO - MIMOS STP\n\n` +
+                `DADOS DO CLIENTE\n` +
+                `Nome: ${name}\n` +
+                `WhatsApp: ${phone}\n` +
+                `Email: ${email}\n\n` +
+                `INTERESSE\n` +
+                `*Serviço:* ${serviceNames[service] || service}\n` +
+                `*Data:* ${date}\n\n` +
+                `*Mensagem:*\n${message}\n\n` +
+                `*Aguardo seu contato para criarmos momentos inesquecíveis!*`;
+            
+            const encodedMessage = encodeURIComponent(whatsappMessage);
+            
+            showToast('Enviando sua solicitação...', 'info');
+            
+            setTimeout(() => {
+                const whatsappUrl = `https://wa.me/2399988158?text=${encodedMessage}`;
+                window.open(whatsappUrl, '_blank');
+                document.getElementById('contactForm').reset();
+                showToast('Solicitação enviada com sucesso!', 'success');
+            }, 1500);
+        });
+
+        // Newsletter form
+        function handleNewsletter(event) {
+            event.preventDefault();
+            const email = event.target.querySelector('input[type="email"]').value;
+            showToast(`Cadastro realizado com sucesso! Confirme em ${email}`, 'success');
+            event.target.reset();
+        }
+
+        // FAQ functionality
+        function toggleFAQ(element) {
+            const faqItem = element.parentElement;
+            const allFaqItems = document.querySelectorAll('.faq-item');
+            
+            // Close all other FAQs
+            allFaqItems.forEach(item => {
+                if (item !== faqItem) {
+                    item.classList.remove('active');
+                }
+            });
+            
+            // Toggle current FAQ
+            faqItem.classList.toggle('active');
+        }
+
+        // Back to top button
+        const backToTopBtn = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 500) {
+                backToTopBtn.classList.remove('hidden');
             } else {
-                muteButton.style.display = 'none';
-            }
-
-            // Play video if this is a video story
-            if (storyType === 'video' && videoElements[index]) {
-                videoElements[index].currentTime = 0;
-                // The video will wait for user interaction via the placeholder
-
-                // Update progress bar based on video duration
-                const video = videoElements[index];
-                video.addEventListener('timeupdate', () => {
-                    if (!isPaused && stories[index].classList.contains('active')) {
-                        const progress = (video.currentTime / video.duration) * 100;
-                        progressBars[index].style.width = `${progress}%`;
-                    }
-                });
-
-                // Clear existing interval
-                clearInterval(storyInterval);
-            } else {
-                // Auto advance to next story after 5 seconds for images
-                if (!isPaused) {
-                    clearInterval(storyInterval);
-                    storyInterval = setInterval(() => {
-                        if (!isPaused) {
-                            changeStory(1);
-                        }
-                    }, 5000);
-                }
-            }
-        }
-
-        function changeStory(direction) {
-            let newIndex = currentStory + direction;
-
-            if (newIndex < 0) {
-                newIndex = stories.length - 1;
-            } else if (newIndex >= stories.length) {
-                newIndex = 0;
-            }
-
-            showStory(newIndex);
-        }
-
-        function goToStory(index) {
-            showStory(index);
-        }
-
-        function togglePlayPause() {
-            isPaused = !isPaused;
-            const icon = document.getElementById('playPauseIcon');
-
-            if (isPaused) {
-                icon.textContent = 'play_arrow';
-
-                // Pause current video if playing
-                if (videoElements[currentStory]) {
-                    videoElements[currentStory].pause();
-
-                    // Pause the current progress bar
-                    const currentBar = progressBars[currentStory];
-                    const computedStyle = window.getComputedStyle(currentBar);
-                    const width = computedStyle.width;
-                    currentBar.style.transition = 'none';
-                    currentBar.style.width = width;
-                } else {
-                    // For images, pause the progress bar
-                    const currentBar = progressBars[currentStory];
-                    const computedStyle = window.getComputedStyle(currentBar);
-                    const width = computedStyle.width;
-                    currentBar.style.transition = 'none';
-                    currentBar.style.width = width;
-                }
-
-                clearInterval(storyInterval);
-            } else {
-                icon.textContent = 'pause';
-
-                // Resume video if this is a video story
-                if (videoElements[currentStory]) {
-                    videoElements[currentStory].play();
-
-                    // Calculate remaining time based on video position
-                    const video = videoElements[currentStory];
-                    const remainingTime = (video.duration - video.currentTime) * 1000;
-
-                    // Set up interval to continue auto-advancing
-                    storyInterval = setInterval(() => {
-                        if (!isPaused) {
-                            changeStory(1);
-                        }
-                    }, remainingTime);
-                } else {
-                    // For images, resume the progress bar
-                    const currentBar = progressBars[currentStory];
-                    const computedStyle = window.getComputedStyle(currentBar);
-                    const width = computedStyle.width;
-                    const widthValue = parseFloat(width);
-                    const remainingWidth = 100 - widthValue;
-                    const remainingTime = (remainingWidth / 100) * 5000;
-
-                    currentBar.style.transition = `width ${remainingTime}ms linear`;
-                    currentBar.classList.add('active');
-
-                    // Set up interval to continue auto-advancing
-                    storyInterval = setInterval(() => {
-                        if (!isPaused) {
-                            changeStory(1);
-                        }
-                    }, remainingTime);
-                }
-            }
-        }
-
-        function toggleMute() {
-            const video = videoElements[currentStory];
-            if (video) {
-                video.muted = !video.muted;
-                updateMuteIcon();
-            }
-        }
-
-        function updateMuteIcon() {
-            const video = videoElements[currentStory];
-            if (video) {
-                if (video.muted) {
-                    muteIcon.textContent = 'volume_off';
-                } else {
-                    muteIcon.textContent = 'volume_up';
-                }
-            }
-        }
-
-        // Initialize videos and first story
-        initVideos();
-        showStory(0);
-
-        // Keyboard navigation
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'ArrowLeft') {
-                changeStory(-1);
-            } else if (e.key === 'ArrowRight') {
-                changeStory(1);
-            } else if (e.key === ' ') {
-                e.preventDefault();
-                togglePlayPause();
+                backToTopBtn.classList.add('hidden');
             }
         });
+        
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const offset = 80; // Account for fixed navbar
+                    const targetPosition = target.offsetTop - offset;
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+                
+                // Close mobile menu if open
+                if (mobileMenu.classList.contains('active')) {
+                    closeMobileMenuFunc();
+                }
+            });
+        });
+
+        // Navbar scroll effect
+        let lastScroll = 0;
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            const currentScroll = window.pageYOffset;
+            
+            if (currentScroll > 100) {
+                navbar.classList.add('bg-white/95', 'shadow-lg');
+            } else {
+                navbar.classList.remove('bg-white/95', 'shadow-lg');
+            }
+            
+            lastScroll = currentScroll;
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.querySelectorAll('.service-card, .card, .testimonial-card, .hover-lift').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'all 0.6s ease-out';
+            observer.observe(el);
+        });
+
+        // Form validation
+        function validateEmail(email) {
+            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return re.test(email);
+        }
+
+        function validatePhone(phone) {
+            const re = /^\+?[\d\s\-\(\)]+$/;
+            return re.test(phone) && phone.length >= 10;
+        }
+
+        // Add validation to forms
+        document.querySelectorAll('form').forEach(form => {
+            form.addEventListener('submit', function(e) {
+                const emailInput = this.querySelector('input[type="email"]');
+                const phoneInput = this.querySelector('input[type="tel"]');
+                
+                if (emailInput && !validateEmail(emailInput.value)) {
+                    e.preventDefault();
+                    showToast('Por favor, insira um email válido', 'error');
+                    emailInput.focus();
+                    return;
+                }
+                
+                if (phoneInput && !validatePhone(phoneInput.value)) {
+                    e.preventDefault();
+                    showToast('Por favor, insira um telefone válido', 'error');
+                    phoneInput.focus();
+                    return;
+                }
+            });
+        });
+
+        // Performance optimization
+        if ('IntersectionObserver' in window) {
+            // Lazy load images
+            const imageObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        if (img.dataset.src) {
+                            img.src = img.dataset.src;
+                        }
+                        imageObserver.unobserve(img);
+                    }
+                });
+            });
+            
+            document.querySelectorAll('img[data-src]').forEach(img => {
+                imageObserver.observe(img);
+            });
+        }
+
+        // Error handling
+        window.addEventListener('error', (e) => {
+            console.error('JavaScript error:', e.error);
+            // Could send to error tracking service
+        });
+
+        // Prevent horizontal scroll on touch devices
+        document.addEventListener('touchmove', function(e) {
+            if (e.scale !== 1) {
+                e.preventDefault();
+            }
+        }, { passive: false });
     </script>
 </body>
-
 </html>

@@ -1,0 +1,1131 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Levamos a Felicidade até você com surpresas personalizadas, decoração romântica, picnics, jantares e muito mais. Momentos únicos, entregues com amor e emoção.">
+    <title>Levamos a Felicidade até você</title>
+    <!-- CSS Otimizado: Substituído o script CDN do Tailwind por um link de folha de estilo estática para melhor performance -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        
+        .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .font-sans {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .whatsapp-green {
+            background-color: #25D366;
+        }
+
+        .whatsapp-green:hover {
+            background-color: #128C7E;
+        }
+
+        .gold-gradient {
+            background: linear-gradient(135deg, #F59E0B, #FEF3C7, #FDF2F8);
+        }
+
+        .card-shadow {
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+
+        .testimonial-card {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+        }
+
+        .service-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        .carousel-item {
+            display: none;
+        }
+
+        .carousel-item.active {
+            display: block;
+        }
+
+        .text-shadow {
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        .grid-pattern {
+            background-image:
+                linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+
+        .icon-circle {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin: 0 auto 1rem;
+        }
+
+        .icon-gold {
+            background-color: rgba(245, 158, 11, 0.15);
+        }
+
+        .icon-pink {
+            background-color: rgba(236, 72, 153, 0.15);
+        }
+
+        .icon-purple {
+            background-color: rgba(147, 51, 234, 0.15);
+        }
+
+        .icon-blue {
+            background-color: rgba(59, 130, 246, 0.15);
+        }
+
+        .icon-green {
+            background-color: rgba(16, 185, 129, 0.15);
+        }
+
+        .testimonial-avatar {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background-color: #F59E0B;
+            color: white;
+            font-weight: 600;
+            margin-right: 1rem;
+        }
+
+        /* Estilos para Stories */
+        .stories-container {
+            width: 100%;
+            max-width: 400px;
+            margin: 0 auto;
+            position: relative;
+            background: #000;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            aspect-ratio: 9/16;
+        }
+
+        .story-item {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: none;
+        }
+
+        .story-item.active {
+            display: block;
+        }
+
+        .story-progress {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: rgba(255, 255, 255, 0.3);
+            z-index: 10;
+        }
+
+        .story-progress-bar {
+            height: 100%;
+            background: white;
+            width: 0;
+            transition: width 5s linear;
+        }
+
+        .story-progress-bar.active {
+            width: 100%;
+        }
+
+        .story-content {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .story-nav {
+            position: absolute;
+            top: 0;
+            width: 40%;
+            height: 100%;
+            z-index: 5;
+            cursor: pointer;
+        }
+
+        .story-nav.prev {
+            left: 0;
+        }
+
+        .story-nav.next {
+            right: 0;
+        }
+
+        .story-info {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0), transparent);
+            color: white;
+            z-index: 5;
+        }
+
+        .story-thumbnails {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 15px;
+        }
+
+        .story-thumbnail {
+            width: 8px;
+            height: 8px;
+            border-radius: 8px;
+            overflow: hidden;
+            cursor: pointer;
+            border: 6px solid transparent;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .story-thumbnail.active {
+            border-color: #1d83e293;
+            transform: scale(1.1);
+        }
+
+        .story-thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .story-pause {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            z-index: 10;
+            color: white;
+            cursor: pointer;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .story-mute {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            z-index: 10;
+            color: white;
+            cursor: pointer;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: none;
+            /* Hidden by default */
+            align-items: center;
+            justify-content: center;
+        }
+
+        .video-indicator {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 6;
+        }
+
+        .video-placeholder {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 5;
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .step-number {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #F59E0B;
+            color: white;
+            font-weight: 700;
+            font-size: 1.25rem;
+            margin-right: 1rem;
+        }
+
+        .process-step {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .newsletter-input {
+            border: 2px solid #F59E0B;
+            border-radius: 50px;
+            padding: 0.75rem 1.5rem;
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .newsletter-button {
+            background-color: #F59E0B;
+            color: white;
+            border-radius: 50px;
+            padding: 0.75rem 2rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .newsletter-button:hover {
+            background-color: #d97706;
+            transform: translateY(-2px);
+        }
+
+        .footer-link {
+            transition: color 0.3s ease;
+        }
+
+        .footer-link:hover {
+            color: #F59E0B;
+        }
+
+        .social-icon {
+            transition: all 0.3s ease;
+        }
+
+        .social-icon:hover {
+            transform: translateY(-3px);
+        }
+
+        .footer-bg {
+            background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+        }
+
+        .hero-bg {
+            background-image: url('https://sfile.chatglm.cn/images-ppt/1ab95102861e.jpg');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .hero-overlay {
+            background: rgba(0, 0, 0, 0.55);
+        }
+
+        .roun {
+            border-radius: 20%;
+        }
+    </style>
+</head>
+
+<body class="font-sans flex flex-col min-h-screen">
+    <div class="flex-grow">
+    <!-- Hero Section -->
+    <section class="hero-bg min-h-[calc(100vh-0px)] flex items-center justify-center px-4 py-12 relative overflow-hidden">
+        <div class="hero-overlay absolute inset-0 grid-pattern"></div>
+        <div class="max-w-4xl mx-auto text-center relative z-10">
+            <h1 class="font-serif text-5xl md:text-6xl lg:text-7xl font-bold text-gray-200 mb-6 text-shadow">
+                Levamos a Felicidade até você
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-200 mb-10 max-w-2xl mx-auto">
+                Momentos únicos, entregues com amor e emoção.
+            </p>
+            <a href="https://wa.me/2399988158" target="_blank"
+                class="whatsapp-green text-white font-semibold py-4 px-8 rounded-full inline-flex items-center text-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+                <i class="material-icons mr-2">chat</i>
+                Peça sua surpresa agora
+            </a>
+        </div>
+    </section>
+
+    <!-- Sobre Nós -->
+    <section class="py-16 px-4 bg-white">
+        <div class="max-w-6xl mx-auto">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/2">
+                    <h2 class="font-serif text-4xl font-bold text-gray-800 mb-6">Sobre Nós</h2>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-4">
+                        Está sem tempo? Sem ideia? Acha que preparar uma surpresa é complicado? Você se enganou, nós
+                        vamos te ajudar!
+                    </p>
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        Nossa missão é realizar surpresas personalizadas e inesquecíveis. E para isso você não vai se
+                        preocupar pois nós pensamos em tudo para você. Oferecemos produtos e pacotes seguros e
+                        acessíveis para tornar cada momento especial!
+                    </p>
+                </div>
+                <div class="md:w-1/2">
+                    <img src="https://sfile.chatglm.cn/images-ppt/5adb64c87430.jpg"
+                        alt="Pessoas sorrindo ao receber presente" class="rounded-lg shadow-xl w-full" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Como Funciona -->
+    <section class="py-16 px-4 bg-gray-50">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="font-serif text-3xl md:text-4xl font-bold text-gray-800 text-center mb-12">Veja como é fácil
+                adquirir nossas surpresas</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Passo 1 -->
+                <div class="bg-white rounded-lg p-6 card-shadow">
+                    <div class="process-step">
+                        <div class="step-number">1</div>
+                        <h3 class="font-semibold text-xl text-gray-800">Escolha o produto</h3>
+                    </div>
+                    <p class="text-gray-600">Primeiro você escolhe o produto que melhor se encaixa no seu momento</p>
+                </div>
+
+                <!-- Passo 2 -->
+                <div class="bg-white rounded-lg p-6 card-shadow">
+                    <div class="process-step">
+                        <div class="step-number">2</div>
+                        <h3 class="font-semibold text-xl text-gray-800">Selecione a cidade</h3>
+                    </div>
+                    <p class="text-gray-600">Depois escolhe a cidade onde a surpresa será realizada</p>
+                </div>
+
+                <!-- Passo 3 -->
+                <div class="bg-white rounded-lg p-6 card-shadow">
+                    <div class="process-step">
+                        <div class="step-number">3</div>
+                        <h3 class="font-semibold text-xl text-gray-800">Selecione o local e data</h3>
+                    </div>
+                    <p class="text-gray-600">Defina o local e a data ideal para a sua surpresa</p>
+                </div>
+
+                <!-- Passo 4 -->
+                <div class="bg-white rounded-lg p-6 card-shadow">
+                    <div class="process-step">
+                        <div class="step-number">4</div>
+                        <h3 class="font-semibold text-xl text-gray-800">Personalize</h3>
+                    </div>
+                    <p class="text-gray-600">Escolha como personalizar e incrementar a sua surpresa</p>
+                </div>
+
+                <!-- Passo 5 -->
+                <div class="bg-white rounded-lg p-6 card-shadow">
+                    <div class="process-step">
+                        <div class="step-number">5</div>
+                        <h3 class="font-semibold text-xl text-gray-800">Finalize a compra</h3>
+                    </div>
+                    <p class="text-gray-600">Coloque no carrinho e finalize a compra!</p>
+                </div>
+
+                <!-- Resultado -->
+                <div class="bg-gradient-to-r from-yellow-100 to-pink-100 rounded-lg p-6 card-shadow">
+                    <div class="flex items-center mb-4">
+                        <i class="material-icons text-3xl text-amber-600 mr-3">stars</i>
+                        <h3 class="font-semibold text-xl text-gray-800">Pronto!</h3>
+                    </div>
+                    <p class="text-gray-600">Nossa equipe cuidará dos detalhes para que sua surpresa seja impecável e
+                        inesquecível!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nossos Serviços -->
+    <section class="py-16 px-4 bg-white">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="font-serif text-3xl md:text-4xl font-bold text-gray-800 text-center mb-12">Nossos Serviços</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Aniversários Especiais -->
+                <div class="service-card bg-white rounded-lg p-8 card-shadow">
+                    <div class="icon-circle icon-gold">
+                        <i class="material-icons text-4xl text-amber-600">cake</i>
+                    </div>
+                    <h3 class="font-serif text-2xl font-semibold text-gray-800 mb-4 text-center">Aniversários Especiais
+                    </h3>
+                    <p class="text-gray-600 text-center mb-6">Surpresas personalizadas que emocionam.</p>
+                    <img src="https://sfile.chatglm.cn/images-ppt/285964e01cfe.jpg"
+                        alt="Bolo de aniversário com presente" class="rounded-lg w-full h-48 object-cover" loading="lazy">
+                </div>
+
+                <!-- Decoração Romântica -->
+                <div class="service-card bg-white rounded-lg p-8 card-shadow">
+                    <div class="icon-circle icon-pink">
+                        <i class="material-icons text-4xl text-pink-600">favorite</i>
+                    </div>
+                    <h3 class="font-serif text-2xl font-semibold text-gray-800 mb-4 text-center">Decoração Romântica
+                    </h3>
+                    <p class="text-gray-600 text-center mb-6">Ambientes decorados para momentos especiais.</p>
+                    <img src="https://sfile.chatglm.cn/images-ppt/1ab95102861e.jpg" alt="Decoração romântica"
+                        class="rounded-lg w-full h-48 object-cover" loading="lazy">
+                </div>
+
+                <!-- Picnic -->
+                <div class="service-card bg-white rounded-lg p-8 card-shadow">
+                    <div class="icon-circle icon-green">
+                        <i class="material-icons text-4xl text-green-600">park</i>
+                    </div>
+                    <h3 class="font-serif text-2xl font-semibold text-gray-800 mb-4 text-center">Picnic</h3>
+                    <p class="text-gray-600 text-center mb-6">Momentos ao ar livre com tudo preparado.</p>
+                    <img src="https://sfile.chatglm.cn/images-ppt/daca2f317505.jpg" alt="Picnic romântico"
+                        class="rounded-lg w-full h-48 object-cover" loading="lazy">
+                </div>
+
+                <!-- Jantar Romântico -->
+                <div class="service-card bg-white rounded-lg p-8 card-shadow">
+                    <div class="icon-circle icon-purple">
+                        <i class="material-icons text-4xl text-purple-600">restaurant</i>
+                    </div>
+                    <h3 class="font-serif text-2xl font-semibold text-gray-800 mb-4 text-center">Jantar Romântico</h3>
+                    <p class="text-gray-600 text-center mb-6">Jantares especiais para celebrar o amor.</p>
+                    <img src="https://sfile.chatglm.cn/images-ppt/e03432169208.jpg" alt="Jantar romântico"
+                        class="rounded-lg w-full h-48 object-cover" loading="lazy">
+                </div>
+
+                <!-- Surpresa na Caixa -->
+                <div class="service-card bg-white rounded-lg p-8 card-shadow">
+                    <div class="icon-circle icon-blue">
+                        <i class="material-icons text-4xl text-blue-600">card_giftcard</i>
+                    </div>
+                    <h3 class="font-serif text-2xl font-semibold text-gray-800 mb-4 text-center">Surpresa na Caixa</h3>
+                    <p class="text-gray-600 text-center mb-6">Presentes únicos e personalizados.</p>
+                    <img src="https://sfile.chatglm.cn/images-ppt/d897f7e99073.jpg"
+                        alt="Caixa de presente personalizada" class="rounded-lg w-full h-48 object-cover" loading="lazy">
+                </div>
+
+                <!-- Proposta de Casamento -->
+                <div class="service-card bg-white rounded-lg p-8 card-shadow">
+                    <div class="icon-circle icon-pink">
+                        <i class="material-icons text-4xl text-pink-600">diamond</i>
+                    </div>
+                    <h3 class="font-serif text-2xl font-semibold text-gray-800 mb-4 text-center">Proposta de Casamento
+                    </h3>
+                    <p class="text-gray-600 text-center mb-6">Momentos inesquecíveis para o grande "sim".</p>
+                    <img src="https://sfile.chatglm.cn/images-ppt/821fdbad95a2.jpg" alt="Proposta de casamento"
+                        class="rounded-lg w-full h-48 object-cover" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galeria de Emoções - Stories Instagram -->
+    <section class="py-16 px-4 bg-gray-50">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="font-serif text-3xl md:text-4xl font-bold text-gray-800 text-center mb-6">Galeria de Emoções</h2>
+            <p class="text-lg md:text-xl text-gray-700 text-center mb-12 max-w-2xl mx-auto">Mais que presentes,
+                entregamos emoções.</p>
+
+            <div class="stories-container select-none">
+                <!-- Story 1 - Foto -->
+                <div class="story-item active" data-story="0" data-type="video">
+                    <div class="story-progress">
+                        <div class="story-progress-bar active"></div>
+                    </div>
+                    <div class="video-placeholder">
+                        <i class="material-icons text-3xl">play_arrow</i>
+                    </div>
+                    <video class="story-content" muted loop preload="metadata" poster="assets/mimo1_poster.jpg">
+                        <source src="assets/mimo1.mp4"
+                            type="video/mp4">
+                        Seu navegador não suporta o elemento de vídeo.
+                    </video>
+                    <!-- <div class="story-info">
+                        <h3 class="text-xl font-semibold mb-2">Surpresa de Aniversário</h3>
+                        <p>"A emoção de receber um presente inesperado no dia especial"</p>
+                    </div> -->
+                </div>
+
+                <!-- Story 2 - Vídeo -->
+                <div class="story-item" data-story="1" data-type="video">
+                    <div class="story-progress">
+                        <div class="story-progress-bar"></div>
+                    </div>
+                    <div class="video-placeholder">
+                        <i class="material-icons text-3xl">play_arrow</i>
+                    </div>
+                    <video class="story-content" muted loop preload="metadata" poster="assets/mimo2_poster.jpg">
+                        <source src="assets/mimo2.mp4"
+                            type="video/mp4">
+                        Seu navegador não suporta o elemento de vídeo.
+                    </video>
+                    <!-- <div class="video-indicator">
+                        <i class="material-icons text-sm">videocam</i>
+                    </div> -->
+                   <!--  <div class="story-info">
+                        <h3 class="text-xl font-semibold mb-2">Reunião de Família</h3>
+                        <p>"Momentos que ficam para sempre na memória"</p>
+                    </div> -->
+                </div>
+
+                <!-- Story 3 - Foto -->
+                <div class="story-item" data-story="2" data-type="video">
+                    <div class="story-progress">
+                        <div class="story-progress-bar"></div>
+                    </div>
+                    <div class="video-placeholder">
+                        <i class="material-icons text-3xl">play_arrow</i>
+                    </div>
+                    <video class="story-content" muted loop preload="metadata" poster="assets/mimo2_poster.jpg">
+                        <source src="assets/mimo2.mp4"
+                            type="video/mp4">
+                        Seu navegador não suporta o elemento de vídeo.
+                    </video>
+                   <!--  <div class="story-info">
+                        <h3 class="text-xl font-semibold mb-2">Presente Especial</h3>
+                        <p>"A felicidade de receber algo pensado com carinho"</p>
+                    </div> -->
+                </div>
+
+                <!-- Story 4 - Vídeo -->
+                <div class="story-item" data-story="3" data-type="video">
+                    <div class="story-progress">
+                        <div class="story-progress-bar"></div>
+                    </div>
+                    <div class="video-placeholder">
+                        <i class="material-icons text-3xl">play_arrow</i>
+                    </div>
+                    <video class="story-content" muted loop preload="metadata" poster="assets/mimo2_poster.jpg">
+                        <source src="assets/mimo2.mp4"
+                            type="video/mp4">
+                        Seu navegador não suporta o elemento de vídeo.
+                    </video>
+                    <!-- <div class="video-indicator">
+                        <i class="material-icons text-sm">videocam</i>
+                    </div> -->
+                    <!-- <div class="story-info">
+                        <h3 class="text-xl font-semibold mb-2">Momento de Surpresa</h3>
+                        <p>"A expressão pura de felicidade ao ser surpreendida"</p>
+                    </div> -->
+                </div>
+
+                <!-- Story 5 - Foto -->
+                <div class="story-item" data-story="4" data-type="video">
+                    <div class="story-progress">
+                        <div class="story-progress-bar"></div>
+                    </div>
+                    <div class="video-placeholder">
+                        <i class="material-icons text-3xl">play_arrow</i>
+                    </div>
+                    <video class="story-content" muted loop preload="metadata" poster="assets/mimo3_poster.jpg">
+                        <source src="assets/mimo3.mp4"
+                            type="video/mp4">
+                        Seu navegador não suporta o elemento de vídeo.
+                    </video>
+                    <!-- <div class="story-info">
+                        <h3 class="text-xl font-semibold mb-2">Momento de Surpresa</h3>
+                        <p>"A expressão pura de felicidade ao ser surpreendida"</p>
+                    </div> -->
+                </div>
+
+                <!-- Navigation Areas -->
+                <div class="story-nav prev flex items-center justify-start p-2" onclick="changeStory(-1)">
+                    <div class="bg-black/20 roun p-0.5">
+                        <i class="material-icons text-white/30 hover:text-white/90 text-3xl md:text-4xl">chevron_left</i>
+                    </div>
+                </div>
+                <div class="story-nav next flex items-center justify-end p-2" onclick="changeStory(1)">
+                    <div class=" bg-black/20 roun p-0.5">
+                        <i class="material-icons text-white/30 hover:text-white/90 text-3xl md:text-4xl">chevron_right</i>
+                    </div>
+                </div>
+
+                <!-- Pause Button -->
+                <div class="hidden story-pause" onclick="togglePlayPause()">
+                    <i class="material-icons" id="playPauseIcon">pause</i>
+                </div>
+
+                <!-- Mute Button -->
+                <div class="story-mute" onclick="toggleMute()">
+                    <i class="material-icons" id="muteIcon">volume_off</i>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Depoimentos 
+    <section class="py-16 px-4 bg-white">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="font-serif text-4xl font-bold text-gray-800 text-center mb-12">O que dizem sobre nós</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="testimonial-card rounded-lg p-6 card-shadow">
+                    <p class="text-lg text-gray-700 italic mb-4">"Gostaria de agradecer pela atenção e desenvolvimento da surpresa! Com toda certeza lembraremos desse dia com muito carinho pelo resto das nossas vidas! É um dia de muita expectativa e 'ansiedade' onde nada pode dar 'errado'! Tudo estava lindo e foi como eu imaginei!"</p>
+                    <div class="flex items-center">
+                        <div class="testimonial-avatar">
+                            <i class="material-icons">person</i>
+                        </div>
+                        <div>
+                            <p class="font-semibold text-gray-800">Danubia Fracaro</p>
+                            <p class="text-sm text-gray-600">Decoração Romântica</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card rounded-lg p-6 card-shadow">
+                    <p class="text-lg text-gray-700 italic mb-4">"Foi uma experiência incrível, meu marido ficou sem palavras, em meio à correria do dia a dia, uma empresa monta um momento romântico para o casal, você não precisa fazer nada. E tudo ficou pronto, uma surpresa inesquecível a sua espera."</p>
+                    <div class="flex items-center">
+                        <div class="testimonial-avatar">
+                            <i class="material-icons">person</i>
+                        </div>
+                        <div>
+                            <p class="font-semibold text-gray-800">Aline de S Costa</p>
+                            <p class="text-sm text-gray-600">Picnic</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card rounded-lg p-6 card-shadow">
+                    <p class="text-lg text-gray-700 italic mb-4">"Conheci através da internet e achei a ideia que a empresa propõem super diferente e inovadora! Eu que trabalhei em uma empresa de eventos achei genial! Desde o atendimento com carinho e todo cuidado da preparação, da pessoa que será surpreendida não descobrir, os detalhes tudo é muito bem pensado e cuidado!"</p>
+                    <div class="flex items-center">
+                        <div class="testimonial-avatar">
+                            <i class="material-icons">person</i>
+                        </div>
+                        <div>
+                            <p class="font-semibold text-gray-800">Gabrielle Calici</p>
+                            <p class="text-sm text-gray-600">Decoração Romântica</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card rounded-lg p-6 card-shadow">
+                    <p class="text-lg text-gray-700 italic mb-4">"Adorei o serviço prestado por vocês. Foi inesquecível para ambos, e recebemos todo o apoio que precisávamos, até porque não somos do Brasil e nem sempre é fácil coordenar este tipo de eventos à distância."</p>
+                    <div class="flex items-center">
+                        <div class="testimonial-avatar">
+                            <i class="material-icons">person</i>
+                        </div>
+                        <div>
+                            <p class="font-semibold text-gray-800">Nuno Pereira</p>
+                            <p class="text-sm text-gray-600">Jantar Romântico</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Newsletter
+    <section class="py-16 px-4 bg-gray-50">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="font-serif text-4xl font-bold text-gray-800 mb-6">Quer receber dicas e novidades?</h2>
+            <p class="text-xl text-gray-700 mb-8">Assine nossa newsletter e fique por dentro das melhores surpresas!</p>
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+                <input type="email" placeholder="Seu melhor e-mail" class="newsletter-input">
+                <button class="newsletter-button">
+                    <i class="material-icons align-middle mr-2">email</i>
+                    Assinar
+                </button>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Chamada para Ação Final -->
+    <section class="py-16 px-4 gold-gradient relative overflow-hidden grid-pattern">
+        <div class="absolute inset-0 bg-gradient-to-br from-yellow-400/20 via-white/30 to-pink-100/40"></div>
+        <div class="max-w-4xl mx-auto text-center relative z-10 px-4">
+            <h2 class="font-serif text-3xl md:text-4xl font-bold text-gray-800 mb-6">Precisa do nosso serviço?</h2>
+            <p class="text-lg md:text-xl text-gray-700 mb-8">Envie uma mensagem agora.</p>
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-8 mb-8">
+                <p class="text-lg text-gray-700 flex items-center">
+                    <i class="material-icons align-middle mr-2">phone</i>
+                    +239 9988158
+                </p>
+                <p class="text-lg text-gray-700 flex items-center">
+                    <i class="material-icons align-middle mr-2">phone</i>
+                    +239 9966764
+                </p>
+            </div>
+            <a href="https://wa.me/2399988158" target="_blank"
+                class="whatsapp-green text-white font-semibold py-4 px-8 rounded-full inline-flex items-center text-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+                <i class="material-icons mr-2">chat</i>
+                Fale conosco no WhatsApp
+            </a>
+        </div>
+    </section>
+
+    <!-- Novo Footer Profissional -->
+    <footer class="footer-bg text-white pt-16 pb-8">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                <!-- Sobre Nós -->
+                <div>
+                    <h3 class="font-serif text-2xl font-bold mb-4 text-yellow-400">Levamos a Felicidade</h3>
+                    <p class="text-gray-300 mb-4">
+                        Transformamos momentos especiais em memórias inesquecíveis com surpresas personalizadas e
+                        entregas emocionantes.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="social-icon text-gray-400 hover:text-yellow-400">
+                            <i class="material-icons">facebook</i>
+                        </a>
+                        <a href="#" class="social-icon text-gray-400 hover:text-yellow-400">
+                            <i class="material-icons">alternate_email</i>
+                        </a>
+                        <a href="#" class="social-icon text-gray-400 hover:text-yellow-400">
+                            <i class="material-icons">camera_alt</i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Links Rápidos -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-4 text-yellow-400">Links Rápidos</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="footer-link text-gray-300 hover:text-yellow-400">Sobre Nós</a></li>
+                        <li><a href="#" class="footer-link text-gray-300 hover:text-yellow-400">Nossos Serviços</a></li>
+                        <li><a href="#" class="footer-link text-gray-300 hover:text-yellow-400">Galeria de Emoções</a>
+                        </li>
+                        <li><a href="#" class="footer-link text-gray-300 hover:text-yellow-400">Depoimentos</a></li>
+                        <li><a href="#" class="footer-link text-gray-300 hover:text-yellow-400">Como Funciona</a></li>
+                    </ul>
+                </div>
+
+                <!-- Serviços -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-4 text-yellow-400">Nossos Serviços</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="footer-link text-gray-300 hover:text-yellow-400">Aniversários
+                                Especiais</a></li>
+                        <li><a href="#" class="footer-link text-gray-300 hover:text-yellow-400">Decoração Romântica</a>
+                        </li>
+                        <li><a href="#" class="footer-link text-gray-300 hover:text-yellow-400">Picnic</a></li>
+                        <li><a href="#" class="footer-link text-gray-300 hover:text-yellow-400">Jantar Romântico</a>
+                        </li>
+                        <li><a href="#" class="footer-link text-gray-300 hover:text-yellow-400">Proposta de
+                                Casamento</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contato -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-4 text-yellow-400">Contato</h4>
+                    <div class="space-y-3">
+                        <div class="flex items-center">
+                            <i class="material-icons mr-3 text-yellow-400">phone</i>
+                            <span class="text-gray-300">+239 9988158</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="material-icons mr-3 text-yellow-400">phone</i>
+                            <span class="text-gray-300">+239 9966764</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="material-icons mr-3 text-yellow-400">email</i>
+                            <span class="text-gray-300">contato@levamosafelicidade.com</span>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="material-icons mr-3 text-yellow-400 mt-1">location_on</i>
+                            <span class="text-gray-300">São Tomé, São Tomé e Príncipe</span>
+                        </div>
+                    </div>
+
+                    <div class="mt-6">
+                        <a href="https://wa.me/2399988158" target="_blank"
+                            class="whatsapp-green text-white font-semibold py-3 px-6 rounded-full inline-flex items-center shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+                            <i class="material-icons mr-2">chat</i>
+                            Fale Conosco
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Divider -->
+            <div class="border-t border-gray-700 mb-8"></div>
+
+            <!-- Bottom Footer -->
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <p class="text-gray-400">© 2025 Levamos a Felicidade até você. Todos os direitos reservados.</p>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="#" class="footer-link text-gray-400 hover:text-yellow-400">Política de Privacidade</a>
+                    <a href="#" class="footer-link text-gray-400 hover:text-yellow-400">Termos de Uso</a>
+                    <a href="#" class="footer-link text-gray-400 hover:text-yellow-400">Trabalhe Conosco</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Stories functionality
+        let currentStory = 0;
+        const stories = document.querySelectorAll('.story-item');
+        const progressBars = document.querySelectorAll('.story-progress-bar');
+        let storyInterval;
+        let isPaused = false;
+        const videoElements = [];
+        const videoPlaceholders = [];
+
+        // Single Mute Button
+        const muteButton = document.querySelector('.story-mute');
+        const muteIcon = document.getElementById('muteIcon');
+
+        // Initialize video elements
+        function initVideos() {
+            stories.forEach((story, index) => {
+                const video = story.querySelector('video');
+                if (video) {
+                    videoElements[index] = video;
+                    videoPlaceholders[index] = story.querySelector('.video-placeholder');
+
+                    // Play video when placeholder is clicked
+                    if (videoPlaceholders[index]) {
+                        videoPlaceholders[index].addEventListener('click', () => {
+                            video.play();
+                        });
+                    }
+
+                    video.addEventListener('ended', () => {
+                        if (!isPaused) {
+                            changeStory(1);
+                        }
+                    });
+                    // Adiciona a funcionalidade de tocar/pausar ao clicar no vídeo
+                    video.addEventListener('click', () => {
+                        togglePlayPause();
+                    });
+
+                    // Show/hide play placeholder
+                    video.addEventListener('play', () => {
+                        if (videoPlaceholders[index]) videoPlaceholders[index].style.display = 'none';
+                    });
+                    video.addEventListener('pause', () => {
+                        if (videoPlaceholders[index]) videoPlaceholders[index].style.display = 'flex';
+                    });
+
+                } else {
+                    videoElements[index] = null;
+                }
+            });
+        }
+
+        function showStory(index) {
+            // Pause current video if playing
+            if (videoElements[currentStory]) {
+                videoElements[currentStory].pause();
+                videoElements[currentStory].muted = true; // Always re-mute on story change
+            }
+
+            // Hide all stories
+            stories.forEach(story => story.classList.remove('active'));
+            progressBars.forEach(bar => bar.classList.remove('active'));
+
+            // Reset all progress bars
+            progressBars.forEach(bar => {
+                bar.style.transition = 'none';
+                bar.style.width = '0';
+            });
+
+            // Show selected story
+            stories[index].classList.add('active');
+
+            // Start progress bar animation
+            setTimeout(() => {
+                progressBars[index].style.transition = 'width 5s linear';
+                progressBars[index].classList.add('active');
+            }, 100);
+
+            currentStory = index;
+
+            const storyType = stories[index].dataset.type;
+
+            // Show/hide mute button
+            if (storyType === 'video') {
+                muteButton.style.display = 'flex';
+                updateMuteIcon();
+            } else {
+                muteButton.style.display = 'none';
+            }
+
+            // Play video if this is a video story
+            if (storyType === 'video' && videoElements[index]) {
+                videoElements[index].currentTime = 0;
+                // The video will wait for user interaction via the placeholder
+
+                // Update progress bar based on video duration
+                const video = videoElements[index];
+                video.addEventListener('timeupdate', () => {
+                    if (!isPaused && stories[index].classList.contains('active')) {
+                        const progress = (video.currentTime / video.duration) * 100;
+                        progressBars[index].style.width = `${progress}%`;
+                    }
+                });
+
+                // Clear existing interval
+                clearInterval(storyInterval);
+            } else {
+                // Auto advance to next story after 5 seconds for images
+                if (!isPaused) {
+                    clearInterval(storyInterval);
+                    storyInterval = setInterval(() => {
+                        if (!isPaused) {
+                            changeStory(1);
+                        }
+                    }, 5000);
+                }
+            }
+        }
+
+        function changeStory(direction) {
+            let newIndex = currentStory + direction;
+
+            if (newIndex < 0) {
+                newIndex = stories.length - 1;
+            } else if (newIndex >= stories.length) {
+                newIndex = 0;
+            }
+
+            showStory(newIndex);
+        }
+
+        function goToStory(index) {
+            showStory(index);
+        }
+
+        function togglePlayPause() {
+            isPaused = !isPaused;
+            const icon = document.getElementById('playPauseIcon');
+
+            if (isPaused) {
+                icon.textContent = 'play_arrow';
+
+                // Pause current video if playing
+                if (videoElements[currentStory]) {
+                    videoElements[currentStory].pause();
+
+                    // Pause the current progress bar
+                    const currentBar = progressBars[currentStory];
+                    const computedStyle = window.getComputedStyle(currentBar);
+                    const width = computedStyle.width;
+                    currentBar.style.transition = 'none';
+                    currentBar.style.width = width;
+                } else {
+                    // For images, pause the progress bar
+                    const currentBar = progressBars[currentStory];
+                    const computedStyle = window.getComputedStyle(currentBar);
+                    const width = computedStyle.width;
+                    currentBar.style.transition = 'none';
+                    currentBar.style.width = width;
+                }
+
+                clearInterval(storyInterval);
+            } else {
+                icon.textContent = 'pause';
+
+                // Resume video if this is a video story
+                if (videoElements[currentStory]) {
+                    videoElements[currentStory].play();
+
+                    // Calculate remaining time based on video position
+                    const video = videoElements[currentStory];
+                    const remainingTime = (video.duration - video.currentTime) * 1000;
+
+                    // Set up interval to continue auto-advancing
+                    storyInterval = setInterval(() => {
+                        if (!isPaused) {
+                            changeStory(1);
+                        }
+                    }, remainingTime);
+                } else {
+                    // For images, resume the progress bar
+                    const currentBar = progressBars[currentStory];
+                    const computedStyle = window.getComputedStyle(currentBar);
+                    const width = computedStyle.width;
+                    const widthValue = parseFloat(width);
+                    const remainingWidth = 100 - widthValue;
+                    const remainingTime = (remainingWidth / 100) * 5000;
+
+                    currentBar.style.transition = `width ${remainingTime}ms linear`;
+                    currentBar.classList.add('active');
+
+                    // Set up interval to continue auto-advancing
+                    storyInterval = setInterval(() => {
+                        if (!isPaused) {
+                            changeStory(1);
+                        }
+                    }, remainingTime);
+                }
+            }
+        }
+
+        function toggleMute() {
+            const video = videoElements[currentStory];
+            if (video) {
+                video.muted = !video.muted;
+                updateMuteIcon();
+            }
+        }
+
+        function updateMuteIcon() {
+            const video = videoElements[currentStory];
+            if (video) {
+                if (video.muted) {
+                    muteIcon.textContent = 'volume_off';
+                } else {
+                    muteIcon.textContent = 'volume_up';
+                }
+            }
+        }
+
+        // Initialize videos and first story
+        initVideos();
+        showStory(0);
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') {
+                changeStory(-1);
+            } else if (e.key === 'ArrowRight') {
+                changeStory(1);
+            } else if (e.key === ' ') {
+                e.preventDefault();
+                togglePlayPause();
+            }
+        });
+    </script>
+</body>
+
+</html>
