@@ -1763,7 +1763,10 @@
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
-                        <img id="detailModalImage" src="https://picsum.photos/seed/placeholder/600/400" alt="Detalhe do serviço" class="rounded-lg shadow-md w-full h-64 object-cover">
+                        <img id="detailModalMainImage" src="https://picsum.photos/seed/placeholder/600/400" alt="Detalhe do serviço" class="rounded-lg shadow-md w-full h-64 object-cover mb-3">
+                        <div id="detailModalThumbnails" class="grid grid-cols-4 gap-2">
+                            <!-- Thumbnails will be injected by JavaScript -->
+                        </div>
                     </div>
                     <div>
                         <p class="text-gray-600 mb-4 text-sm md:text-base" id="detailModalDescription">Descrição do serviço...</p>
@@ -1963,37 +1966,64 @@
             aniversario: {
                 title: 'Aniversários Especiais',
                 description: 'Celebrações inesquecíveis com decorações temáticas, bolos personalizados e muitas surpresas para tornar o dia ainda mais especial.',
-                image: 'https://picsum.photos/seed/birthday-surprise/600/400.jpg',
+                images: [
+                    'https://picsum.photos/seed/birthday-surprise/600/400.jpg',
+                    'https://picsum.photos/seed/birthday-cake/600/400.jpg',
+                    'https://picsum.photos/seed/birthday-gifts/600/400.jpg',
+                    'https://picsum.photos/seed/birthday-party/600/400.jpg'
+                ],
                 items: ['Decoração temática completa', 'Bolo de aniversário personalizado', 'Balões e arranjos florais', 'Mesa de doces e salgados', 'Música ambiente', 'Caixa de presente surpresa']
             },
             decoracao: {
                 title: 'Decoração Romântica',
                 description: 'Transformamos qualquer ambiente num cenário de filme com flores, velas, pétalas e uma iluminação que cria a atmosfera perfeita para o amor.',
-                image: 'https://picsum.photos/seed/romantic-decoration/600/400.jpg',
+                images: [
+                    'https://picsum.photos/seed/romantic-decoration/600/400.jpg',
+                    'https://picsum.photos/seed/romantic-candles/600/400.jpg',
+                    'https://picsum.photos/seed/romantic-petals/600/400.jpg'
+                ],
                 items: ['Decoração com pétalas de rosas', 'Velas aromáticas', 'Balões em formato de coração', 'Letreiro "Te Amo" ou personalizado', 'Música romântica', 'Vinho ou espumante']
             },
             picnic: {
                 title: 'Picnic Exclusivo',
                 description: 'Desfrute de momentos ao ar livre com cestas gourmet, mantas decoradas e uma vista deslumbrante. Nós cuidamos de tudo.',
-                image: 'https://picsum.photos/seed/picnic-romantic/600/400.jpg',
+                images: [
+                    'https://picsum.photos/seed/picnic-romantic/600/400.jpg',
+                    'https://picsum.photos/seed/picnic-basket/600/400.jpg',
+                    'https://picsum.photos/seed/picnic-food/600/400.jpg',
+                    'https://picsum.photos/seed/picnic-view/600/400.jpg'
+                ],
                 items: ['Cesta de vime decorada', 'Manta e almofadas confortáveis', 'Seleção de queijos e frios', 'Frutas da estação', 'Pães artesanais e torradas', 'Suco natural e água aromatizada']
             },
             jantar: {
                 title: 'Jantar Romântico',
                 description: 'Uma experiência gastronômica exclusiva com menu degustação, vinhos selecionados e um ambiente totalmente intimista e privado.',
-                image: 'https://picsum.photos/seed/romantic-dinner/600/400.jpg',
+                images: [
+                    'https://picsum.photos/seed/romantic-dinner/600/400.jpg',
+                    'https://picsum.photos/seed/dinner-table/600/400.jpg',
+                    'https://picsum.photos/seed/dinner-wine/600/400.jpg'
+                ],
                 items: ['Mesa posta com decoração especial', 'Menu de 3 pratos (entrada, principal, sobremesa)', 'Vinho para harmonização', 'Música ambiente selecionada', 'Serviço de garçom exclusivo']
             },
             caixa: {
                 title: 'Caixa de Surpresa',
                 description: 'Presentes exclusivos embalados com muito carinho e entregues de forma surpreendente para emocionar quem você ama.',
-                image: 'https://picsum.photos/seed/gift-box/600/400.jpg',
+                images: [
+                    'https://picsum.photos/seed/gift-box/600/400.jpg',
+                    'https://picsum.photos/seed/gift-balloon/600/400.jpg',
+                    'https://picsum.photos/seed/gift-chocolate/600/400.jpg'
+                ],
                 items: ['Caixa personalizada com nome', 'Balão metalizado com gás hélio', 'Caixa de bombons finos', 'Urso de pelúcia ou item similar', 'Cartão com mensagem personalizada']
             },
             proposta: {
                 title: 'Proposta de Casamento',
                 description: 'Planejamos o momento mais especial da sua vida nos mínimos detalhes para garantir que o "sim" seja perfeito e inesquecível.',
-                image: 'https://picsum.photos/seed/marriage-proposal/600/400.jpg',
+                images: [
+                    'https://picsum.photos/seed/marriage-proposal/600/400.jpg',
+                    'https://picsum.photos/seed/proposal-ring/600/400.jpg',
+                    'https://picsum.photos/seed/proposal-location/600/400.jpg',
+                    'https://picsum.photos/seed/proposal-celebration/600/400.jpg'
+                ],
                 items: ['Cenário cinematográfico (praia, mirante, etc.)', 'Letreiro "Casa Comigo?" iluminado', 'Fotógrafo profissional para registrar o momento', 'Música ao vivo (violinista ou saxofonista)', 'Champanhe para o brinde', 'Buquê de flores']
             }
         };
@@ -2007,14 +2037,30 @@
 
             document.getElementById('detailModalTitle').textContent = service.title;
             document.getElementById('detailModalDescription').textContent = service.description;
-            document.getElementById('detailModalImage').src = service.image;
-            document.getElementById('detailModalImage').alt = service.title;
+            
+            const mainImage = document.getElementById('detailModalMainImage');
+            const thumbnailsContainer = document.getElementById('detailModalThumbnails');
+            
+            mainImage.src = service.images[0];
+            mainImage.alt = service.title;
+            
+            thumbnailsContainer.innerHTML = service.images.map((imgSrc, index) => `
+                <img src="${imgSrc}" alt="Thumbnail ${index + 1}" 
+                     class="thumbnail-img w-full h-16 object-cover rounded-md cursor-pointer border-2 ${index === 0 ? 'border-primary' : 'border-transparent'} hover:border-primary-light transition-all"
+                     onclick="changeDetailImage('${imgSrc}', this)">
+            `).join('');
 
             const itemsList = document.getElementById('detailModalItems');
             itemsList.innerHTML = service.items.map(item => `<li><i class="fas fa-check-circle text-primary mr-2"></i>${item}</li>`).join('');
 
             document.getElementById('serviceDetailModal').classList.remove('hidden');
             document.body.style.overflow = 'hidden';
+        }
+
+        function changeDetailImage(imgSrc, thumbElement) {
+            document.getElementById('detailModalMainImage').src = imgSrc;
+            document.querySelectorAll('.thumbnail-img').forEach(img => img.classList.remove('border-primary'));
+            thumbElement.classList.add('border-primary');
         }
 
         function closeServiceDetailModal() {
