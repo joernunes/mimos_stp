@@ -1915,17 +1915,17 @@
             document.body.style.overflow = 'auto';
         }
 
-        mobileMenuBtn?.addEventListener('click', openMobileMenu);
-        closeMobileMenu?.addEventListener('click', closeMobileMenuFunc);
-        mobileMenuOverlay?.addEventListener('click', closeMobileMenuFunc);
+        if (mobileMenuBtn) {
+            mobileMenuBtn.addEventListener('click', openMobileMenu);
+            closeMobileMenu.addEventListener('click', closeMobileMenuFunc);
+            mobileMenuOverlay.addEventListener('click', closeMobileMenuFunc);
 
-        // Close mobile menu when clicking on links
-        const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
-        mobileNavLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                closeMobileMenuFunc();
+            // Close mobile menu when clicking on links
+            const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+            mobileNavLinks.forEach(link => {
+                link.addEventListener('click', closeMobileMenuFunc);
             });
-        });
+        }
 
         // Toast notification system
         function showToast(message, type = 'success', duration = 3000) {
@@ -2260,11 +2260,13 @@
         let lastScroll = 0;
         window.addEventListener('scroll', () => {
             const navbar = document.getElementById('navbar');
+            if (!navbar) return;
+
             const currentScroll = window.pageYOffset;
             
             if (currentScroll > 100) {
                 navbar.classList.add('bg-white/95', 'shadow-lg');
-            } else {
+            } else if (currentScroll < 100) {
                 navbar.classList.remove('bg-white/95', 'shadow-lg');
             }
             
@@ -2352,13 +2354,6 @@
             console.error('JavaScript error:', e.error);
             // Could send to error tracking service
         });
-
-        // Prevent horizontal scroll on touch devices
-        document.addEventListener('touchmove', function(e) {
-            if (e.scale !== 1) {
-                e.preventDefault();
-            }
-        }, { passive: false });
     </script>
 </body>
 </html>
