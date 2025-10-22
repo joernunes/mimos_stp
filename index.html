@@ -1776,7 +1776,7 @@
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
-                        <img id="detailModalMainImage" src="https://picsum.photos/seed/placeholder/600/400" alt="Detalhe do serviço" class="rounded-lg shadow-md w-full h-64 object-cover mb-3">
+                        <img id="detailModalMainImage" src="https://picsum.photos/seed/placeholder/600/400" alt="Detalhe do serviço" class="rounded-lg shadow-md w-full h-64 object-cover mb-3" loading="lazy">
                         <div id="detailModalThumbnails" class="grid grid-cols-4 gap-2">
                             <!-- Thumbnails will be injected by JavaScript -->
                         </div>
@@ -2052,13 +2052,16 @@
             document.getElementById('detailModalDescription').textContent = service.description;
             
             const mainImage = document.getElementById('detailModalMainImage');
-            const thumbnailsContainer = document.getElementById('detailModalThumbnails');
-            
-            mainImage.src = service.images[0];
+            mainImage.src = service.images[0]; // Define a imagem principal
             mainImage.alt = service.title;
-            
+
+            // Preload da imagem principal para uma melhor experiência
+            const img = new Image();
+            img.src = service.images[0];
+
+            const thumbnailsContainer = document.getElementById('detailModalThumbnails');
             thumbnailsContainer.innerHTML = service.images.map((imgSrc, index) => `
-                <img src="${imgSrc}" alt="Thumbnail ${index + 1}" 
+                <img src="${imgSrc.replace('/600/400', '/100/75')}" alt="Thumbnail ${index + 1}" 
                      class="thumbnail-img w-full h-16 object-cover rounded-md cursor-pointer border-2 ${index === 0 ? 'border-primary' : 'border-transparent'} hover:border-primary-light transition-all"
                      onclick="changeDetailImage('${imgSrc}', this)">
             `).join('');
