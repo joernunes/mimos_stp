@@ -14,7 +14,7 @@
     <link rel="canonical" href="https://mimosstp.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💝</text></svg>">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'></text></svg>">
     <title>Mimos STP - Especialistas em Momentos Inesquecíveis | São Tomé e Príncipe</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -691,7 +691,7 @@
 </head>
 <body class="font-sans flex flex-col min-h-screen">
     <!-- Loading Screen -->
-    <div id="loading-screen" class="fixed inset-0 bg-white z-50 flex items-center justify-center">
+    <!-- <div id="loading-screen" class="fixed inset-0 bg-white z-50 flex items-center justify-center">
         <div class="text-center">
             <div class="w-20 h-20 mx-auto mb-6 rounded-full primary-bg-gradient flex items-center justify-center floating">
                 <i class="fas fa-heart text-4xl text-white heart-beat"></i>
@@ -701,7 +701,7 @@
             </div>
             <p class="text-primary text-sm tracking-wider">PREPARANDO SUA SURPRESA...</p>
         </div>
-    </div>
+    </div> -->
 
     <!-- Mobile Menu Overlay -->
     <div id="mobileMenuOverlay" class="mobile-menu-overlay"></div>
@@ -818,10 +818,15 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero-bg min-h-screen flex items-center justify-center px-4 py-12 relative overflow-hidden">
-        <video class="hero-video" autoplay muted loop playsinline>
-            <source src="assets/mimo1.mp4" type="video/mp4">
+        <!-- <video class="hero-video" autoplay muted loop playsinline preload="metadata" poster="surp1-poster.jpg">
+            <!-- Formato WebM para navegadores modernos (mais leve) --
+            <source src="surp1.webm" type="video/webm">
+            <!-- Formato MP4 como alternativa --
+            <source src="surp1.mp4" type="video/mp4">
             Seu navegador não suporta o elemento de vídeo.
-        </video>
+        </video> -->
+        <!-- Image bg -->
+         <img src="assets/mi.webp" alt="Hero Video" class="hero-video">
         <div class="hero-video-overlay"></div>
         <div class="container relative z-10">
             <div class="text-center max-w-4xl mx-auto">
@@ -968,7 +973,7 @@
                 </div>
                 <div class="slide-in-right order-1 lg:order-2">
                     <div class="relative">
-                        <img src="https://picsum.photos/seed/mimos-team/600/700.jpg" alt="Equipe Mimos STP" class="rounded-2xl shadow-2xl w-full">
+                        <img src="assets/bout.webp" alt="Equipe Mimos STP" class="rounded-2xl shadow-2xl w-full">
                         <div class="absolute -bottom-4 -right-4 md:-bottom-6 md:-right-6 bg-white p-4 md:p-6 rounded-xl shadow-xl max-w-xs">
                             <div class="flex items-center space-x-3 mb-3">
                                 <div class="w-10 h-10 md:w-12 md:h-12 bg-primary rounded-full flex items-center justify-center">
@@ -1070,9 +1075,9 @@
                 <!-- Passo 5 -->
                 <div class="card text-center hover-lift bg-pink-100 border-2 border-primary">
                     <div class="relative mb-4">
-                        <div class="w-12 h-12 md:w-16 md:h-16 bg-primary rounded-full flex items-center justify-center text-white font-bold text-lg md:text-xl mx-auto">
+                        <a href="#contato" target="_blank" class="w-12 h-12 md:w-16 md:h-16 bg-primary rounded-full flex items-center justify-center text-white font-bold text-lg md:text-xl mx-auto">
                             5
-                        </div>
+                        </a>
                         <div class="absolute -top-2 -right-2 w-6 h-6 md:w-8 md:h-8 bg-red-400 rounded-full flex items-center justify-center pulse">
                             <i class="fas fa-heart text-white text-xs"></i>
                         </div>
@@ -1083,7 +1088,7 @@
             </div>
             
             <div class="text-center mt-8 md:mt-12">
-                <a href="https://wa.me/2399988158" target="_blank" class="btn btn-primary text-base md:text-lg px-6 md:px-8 py-3 md:py-4">
+                <a href="#contato" target="_blank" class="btn btn-primary text-base md:text-lg px-6 md:px-8 py-3 md:py-4">
                     <i class="fas fa-rocket mr-2"></i>
                     Começar Agora
                 </a>
