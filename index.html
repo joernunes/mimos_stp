@@ -16,6 +16,43 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'></text></svg>">
     <title>Mimos STP - Especialistas em Momentos Inesquecíveis | São Tomé e Príncipe</title>
+    <!-- SEO: JSON-LD for Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Mimos STP",
+      "image": "https://mimosstp.com/og-image.jpg",
+      "@id": "https://mimosstp.com",
+      "url": "https://mimosstp.netlify.app",
+      "telephone": "+2399988158",
+      "priceRange": "Db",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "São Tomé",
+        "addressLocality": "São Tomé",
+        "addressCountry": "ST"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 0.336472,
+        "longitude": 6.731589 
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "opens": "08:00",
+        "closes": "20:00"
+      },
+      "description": "Especialistas em criar momentos inesquecíveis com surpresas personalizadas, decorações românticas, picnics e propostas de casamento em São Tomé e Príncipe."
+    }
+    </script>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
@@ -1817,28 +1854,28 @@
                 <form id="serviceForm" class="space-y-4">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div>
-                            <label class="block text-gray-700 font-medium mb-2 text-sm">Nome Completo *</label>
+                            <label for="formName" class="block text-gray-700 font-medium mb-2 text-sm">Nome Completo <span class="text-red-500">*</span></label>
                             <input type="text" id="formName" required class="form-input" placeholder="Seu nome completo">
                         </div>
                         <div>
-                            <label class="block text-gray-700 font-medium mb-2 text-sm">WhatsApp *</label>
+                            <label for="formPhone" class="block text-gray-700 font-medium mb-2 text-sm">WhatsApp <span class="text-red-500">*</span></label>
                             <input type="tel" id="formPhone" required class="form-input" placeholder="+239 XXX XXX XXX">
                         </div>
                     </div>
                     
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div>
-                            <label class="block text-gray-700 font-medium mb-2 text-sm">Email *</label>
+                            <label for="formEmail" class="block text-gray-700 font-medium mb-2 text-sm">Email <span class="text-red-500">*</span></label>
                             <input type="email" id="formEmail" required class="form-input" placeholder="seu@email.com">
                         </div>
                         <div>
-                            <label class="block text-gray-700 font-medium mb-2 text-sm">Data Desejada *</label>
+                            <label for="formDate" class="block text-gray-700 font-medium mb-2 text-sm">Data Desejada <span class="text-red-500">*</span></label>
                             <input type="date" id="formDate" required class="form-input">
                         </div>
                     </div>
                     
                     <div>
-                        <label class="block text-gray-700 font-medium mb-2 text-sm">Tipo de Serviço *</label>
+                        <label for="formService" class="block text-gray-700 font-medium mb-2 text-sm">Tipo de Serviço <span class="text-red-500">*</span></label>
                         <select id="formService" required class="form-input">
                             <option value="">Selecione um serviço</option>
                             <option value="aniversario">Aniversário Especial</option>
@@ -1852,7 +1889,7 @@
                     </div>
                     
                     <div>
-                        <label class="block text-gray-700 font-medium mb-2 text-sm">Orçamento Aproximado</label>
+                        <label for="formBudget" class="block text-gray-700 font-medium mb-2 text-sm">Orçamento Aproximado</label>
                         <select id="formBudget" class="form-input">
                             <option value="">Selecione uma faixa</option>
                             <option value="10k-25k">10.000 - 25.000 Db</option>
@@ -1862,7 +1899,7 @@
                     </div>
                     
                     <div>
-                        <label class="block text-gray-700 font-medium mb-2 text-sm">Descreva sua Surpresa Ideal</label>
+                        <label for="formMessage" class="block text-gray-700 font-medium mb-2 text-sm">Descreva sua Surpresa Ideal</label>
                         <textarea id="formMessage" rows="4" class="form-input" placeholder="Conte-nos detalhes sobre como você imagina este momento especial..."></textarea>
                     </div>
                     
