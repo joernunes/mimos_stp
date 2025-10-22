@@ -414,6 +414,14 @@
             to { transform: rotate(360deg); }
         }
         
+        /* Disable text selection on hero section */
+        .hero-bg {
+            -webkit-user-select: none; /* Safari */
+            -moz-user-select: none; /* Firefox */
+            -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Chrome, Opera and Firefox */
+        }
+        
         /* Hero Video Background */
         .hero-video {
             position: absolute;
@@ -831,10 +839,10 @@
         <div class="container relative z-10">
             <div class="text-center max-w-4xl mx-auto">
                 <div class="mb-6 md:mb-8 fade-in-up">
-                    <div class="inline-flex items-center bg-white/20 backdrop-blur-sm rounded-full px-3 md:px-4 py-2 mb-4 md:mb-6">
+                    <!-- <div class="inline-flex items-center bg-white/20 backdrop-blur-sm rounded-full px-3 md:px-4 py-2 mb-4 md:mb-6">
                         <span class="badge badge-primary mr-2 text-xs">NOVO</span>
                         <span class="text-white text-sm">Propostas de Casamento Personalizadas</span>
-                    </div>
+                    </div> -->
                     <h1 class="font-playfair text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-4 md:mb-6 text-shadow">
                         Criamos <span class="text-yellow-300">Momentos</span> que Duram para Sempre
                     </h1>
